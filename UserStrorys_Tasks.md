@@ -31,16 +31,15 @@
 ## 4️⃣ - Tasks
 - ## Tasks für User Story 1: Grundoperationen
 
-1. **UI-Design für Grundoperationen**: Erstellen eines Mock-ups für das Taschenrechner-Layout, das Tasten für Addition, Subtraktion, Multiplikation und Division enthält.
+
 2. **Implementierung der Addition**: Programmieren der Logik zur Addition von zwei oder mehr Zahlen.
 3. **Implementierung der Subtraktion**: Programmieren der Logik zur Subtraktion von zwei oder mehr Zahlen.
 4. **Implementierung der Multiplikation**: Programmieren der Logik zur Multiplikation von zwei oder mehr Zahlen.
 5. **Implementierung der Division**: Programmieren der Logik zur Division, einschliesslich der Behandlung von Divisionen durch Null.
 6. **Unit-Tests für Grundoperationen**: Schreiben von Tests für jede Grundoperation, um sicherzustellen, dass sie korrekt funktioniert, auch bei Randfällen wie negativen Zahlen und Null.
 
-- ## Akzeptanzkriterien Task: UI-Design für Grundoperationen**
+- ## Akzeptanzkriterien Task: für Grundoperationen**
     
-    - Akzeptanzkriterium: Das Design ermöglicht die Eingabe von zwei oder mehr Zahlen und zeigt klar gekennzeichnete Schaltflächen für jede Grundoperation.
 2. **Task: Implementierung der Addition**
     
     - Akzeptanzkriterium: Der Taschenrechner kann zwei oder mehr Zahlen addieren und das korrekte Ergebnis anzeigen.
@@ -123,18 +122,26 @@
 
 - ## Tasks für User Story 5: Temporäre Historie
 
-1. **UI-Element für Historie**: Entwerfen und Implementieren eines Teils der Benutzeroberfläche, der die Historie der letzten Berechnungen anzeigt.
+
 2. **Logik zur Speicherung der Historie**: Programmieren der Logik zur temporären Speicherung der Berechnungsergebnisse und der entsprechenden Eingaben.
 3. **Löschfunktion für Historie**: Implementieren einer Funktion, die die Historie löscht, sobald der Taschenrechner ausgeschaltet wird.
 
 - ## Akzeptanzkriterien Tasks für User Story 5: Temporäre Historie
 
-1. **Task: UI-Element für Historie**
-    
-    - Akzeptanzkriterium: Die Historie ist klar im User Interface sichtbar und zeigt die letzten durchgeführten Berechnungen in einer chronologischen Liste an.
+
 2. **Task: Logik zur Speicherung der Historie**
     
     - Akzeptanzkriterium: Der Taschenrechner speichert die Details jeder Berechnung temporär, bis der Taschenrechner ausgeschaltet wird oder die maximale Anzahl von Einträgen erreicht ist.
 3. **Task: Löschfunktion für Historie**
     
     - Akzeptanzkriterium: Es gibt eine zuverlässige Funktion, die die Historie auf Benutzeranfrage oder beim Ausschalten des Taschenrechners löscht.
+
+- ## Tasks für Ui
+1. **UI-Design für Grundoperationen**: Erstellen eines Mock-ups für das Taschenrechner-Layout, das Tasten für Addition, Subtraktion, Multiplikation und Division enthält.
+2. **UI-Element für Historie**: Entwerfen und Implementieren eines Teils der Benutzeroberfläche, der die Historie der letzten Berechnungen anzeigt.
+
+- ## Akzeptanzkriterien für Tasks für Ui
+
+    - Akzeptanzkriterium: Das Design ermöglicht die Eingabe von zwei oder mehr Zahlen und zeigt klar gekennzeichnete Schaltflächen für jede Grundoperation.
+      
+    - Akzeptanzkriterium: Die Historie ist klar im User Interface sichtbar und zeigt die letzten durchgeführten Berechnungen in einer chronologischen Liste an.
