@@ -1,5 +1,5 @@
 ## 3️⃣ - Userstorys
-- #### User Story 1: Grundoperationen
+#### User Story 1: Grundoperationen
 
 **Als** ein Nutzer,  
 **möchte ich** die Grundoperationen (Addition, Subtraktion, Multiplikation, Division) ausführen können,  
