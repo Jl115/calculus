@@ -1,10 +1,8 @@
 package org.calculus.UI;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import javax.swing.JFrame;
 
 public class CallculatorFrame extends JFrame {
 
@@ -17,5 +15,4 @@ public class CallculatorFrame extends JFrame {
         this.pack();
         this.setVisible(true);
     }
-
 }
