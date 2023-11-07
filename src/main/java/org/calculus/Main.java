@@ -5,12 +5,12 @@ import history.History;
 
 import java.util.ArrayList;
 
-import org.calculus.UI.CallculatorFrame;
+import org.calculus.UI.*;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        
         Addition addition = new Addition("5+5+5");
         Addition addition1 = new Addition("6+8+20+16+55");
         History history = new History();
@@ -31,7 +31,9 @@ public class Main {
         for (String value : historyia) {
             System.out.println(value);
         }
-         new CallculatorFrame();
+
+        new CallculatorFrame();
+
     }
    
 }
