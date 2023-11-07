@@ -1,9 +1,13 @@
 package org.calculus;
 
-import org.calculus.UI.*;
+import history.Addition;
+import history.History;
+
+import java.util.ArrayList;
 
 public class Main {
+
     public static void main(String[] args) {
-        new CallculatorFrame();
+        System.out.println("Hello");
     }
 }
