@@ -14,7 +14,7 @@ public class Calculator {
 
     // Constants
     public static final double PI = Math.PI; // The value of PI
-    public static final double GRAVITATIONAL_CONSTANT = 6.67430e-11; // Gravitational constant in m^3 kg^-1 s^-2
+    //public static final double GRAVITATIONAL_CONSTANT = 6.67430e-11; // Gravitational constant in m^3 kg^-1 s^-2
     public static final double E = Math.E; // The value of Euler's number
 
     private Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
@@ -227,17 +227,6 @@ public class Calculator {
 
     public void clearMemory(String key) {
         memory.remove(key);
-    }
-
-    /**
-     * The main method can be used to create an interactive console interface
-     * or to start the application with a graphical user interface.
-     *
-     * @param args Command line arguments.
-     */
-
-    public static void main(String[] args) {
-        // Interaktive Konsolen oberfläche wird hier implementiert
     }
 
     /**
