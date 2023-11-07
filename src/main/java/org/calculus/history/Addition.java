@@ -1,4 +1,4 @@
-package history;
+package org.calculus.history;
 
 public class Addition {
     private String A;

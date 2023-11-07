@@ -1,11 +1,10 @@
 package org.calculus;
 
-import history.Addition;
-import history.History;
-
 import java.util.ArrayList;
 
 import org.calculus.UI.*;
+import org.calculus.history.Addition;
+import org.calculus.history.History;
 
 
 public class Main {
