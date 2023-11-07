@@ -20,15 +20,4 @@ public class CalculateModulo {
         }
         return number1 % number2;
     }
-
-    /**
-     * Ein einfaches Testprogramm, das die calculateModulo-Methode verwendet.
-     *
-     * @param args nicht verwendet
-     */
-    public static void main(String[] args) {
-        int number1 = 10;
-        int number2 = 3;
-        System.out.println("Der Modulo von " + number1 + " und " + number2 + " ist: " + calculateModulo(number1, number2));
-    }
 }
