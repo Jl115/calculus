@@ -8,11 +8,10 @@ import javax.swing.JPanel;
 
 import org.calculus.components.BaseButton;
 
-public class BaseButtonPanel extends JPanel {
-
+public class ExtendedButtonPanel  extends JPanel{
+    
     private BaseButton[] buttons = new BaseButton[10];
-
-    public BaseButtonPanel() {
+    public ExtendedButtonPanel() {
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
@@ -21,11 +20,11 @@ public class BaseButtonPanel extends JPanel {
         c.weighty = 1.0;
 
         String[][] buttonLabels = {
-            {"AC", "+/-", "%", "/"},
+            {"t", "t", "t", "t"},
             {"7", "8", "9", "x"},
             {"4", "5", "6", "-"},
             {"1", "2", "3", "+"},
-            {"0", ".", "="}
+            {"0", ".", "=", "t"}
         };
 
         for (int row = 0; row < buttonLabels.length; row++) {
@@ -40,4 +39,5 @@ public class BaseButtonPanel extends JPanel {
 
         setVisible(true);
     }
+       
 }
