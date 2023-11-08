@@ -16,7 +16,7 @@ public class CalculateModulo {
     public static int calculateModulo(int number1, int number2) {
         // It is important to check that number2 is not 0 to prevent division by zero.
         if (number2 == 0) {
-            throw new IllegalArgumentException("Der Divisor darf nicht 0 sein.");
+            throw new IllegalArgumentException("The divisor must not be 0.");
         }
         return number1 % number2;
     }
