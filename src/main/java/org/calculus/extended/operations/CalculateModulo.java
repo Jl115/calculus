@@ -1,20 +1,20 @@
 package org.calculus.extended.operations;
 
 /**
- * Die Klasse CalculateModulo stellt eine Methode zur Berechnung des Modulo zweier Zahlen bereit.
+ * The CalculateModulo class provides a method to calculate the modulo of two numbers.
  */
 public class CalculateModulo {
 
     /**
-     * Berechnet den Modulo (Rest der Division) zweier ganzer Zahlen.
+     * Calculates the modulo (remainder of the division) of two integers.
      *
-     * @param number1 der Dividend
-     * @param number2 der Divisor
-     * @return den Modulo von number1 und number2
-     * @throws IllegalArgumentException wenn der Divisor 0 ist
+     * @param number1 the dividend
+     * @param number2 the divisor
+     * @return the modulo of number1 and number2
+     * @throws IllegalArgumentException if the divisor is 0
      */
     public static int calculateModulo(int number1, int number2) {
-        // Es ist wichtig zu prüfen, ob number2 nicht 0 ist, um eine Division durch 0 zu verhindern.
+        // It is important to check that number2 is not 0 to prevent division by zero.
         if (number2 == 0) {
             throw new IllegalArgumentException("Der Divisor darf nicht 0 sein.");
         }
