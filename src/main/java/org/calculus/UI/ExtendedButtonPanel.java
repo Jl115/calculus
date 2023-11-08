@@ -3,41 +3,40 @@ package org.calculus.UI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JPanel;
+import org.calculus.components.BaseSpezialButton;
+import org.calculus.components.DisplayTextField;
 
-import org.calculus.components.BaseButton;
-
-public class ExtendedButtonPanel  extends JPanel{
+public class ExtendedButtonPanel extends JPanel {
     
-    private BaseButton[] buttons = new BaseButton[10];
-    public ExtendedButtonPanel() {
+    // Konstruktor akzeptiert nun eine DisplayTextField-Instanz
+    public ExtendedButtonPanel(DisplayTextField displayTextField) {
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(0, 0,0, 0);
+        c.insets = new Insets(0, 0, 0, 0); // Ein Rand von 5 Pixeln um die Buttons
         c.weightx = 1.0;
         c.weighty = 1.0;
 
-        String[][] buttonLabels = {
-            {"t", "t", "t", "t"},
-            {"7", "8", "9", "x"},
-            {"4", "5", "6", "-"},
-            {"1", "2", "3", "+"},
-            {"0", ".", "=", "t"}
+        // Array der speziellen Buttons, die zu diesem Panel hinzugefügt werden
+        BaseSpezialButton[][] buttons = {
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
         };
 
-        for (int row = 0; row < buttonLabels.length; row++) {
-            for (int col = 0; col < buttonLabels[row].length; col++) {
-                String label = buttonLabels[row][col];
-                BaseButton button = new BaseButton(label);
+        // Hinzufügen der Buttons zum Panel
+        for (int row = 0; row < buttons.length; row++) {
+            for (int col = 0; col < buttons[row].length; col++) {
                 c.gridx = col;
                 c.gridy = row;
-                add(button, c);
+                add(buttons[row][col], c);
             }
         }
 
         setVisible(true);
     }
-       
 }
