@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="added class and comments FactorialCalculator">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculateModulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculateModulo.java" afterDir="false" />
-    </list>
+    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="comments modified to english" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +65,7 @@
       <workItem from="1699280695197" duration="170000" />
       <workItem from="1699295425342" duration="360000" />
       <workItem from="1699296057427" duration="3147000" />
-      <workItem from="1699458671756" duration="380000" />
+      <workItem from="1699458671756" duration="716000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -141,7 +139,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699458765615</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="comments modified to english">
+      <option name="closed" value="true" />
+      <created>1699459116451</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699459116451</updated>
+    </task>
+    <task id="LOCAL-00011" summary="comments modified to english">
+      <option name="closed" value="true" />
+      <created>1699459221900</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699459221900</updated>
+    </task>
+    <task id="LOCAL-00012" summary="comments modified to english">
+      <option name="closed" value="true" />
+      <created>1699459273669</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699459273669</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +189,7 @@
     <MESSAGE value="added comments" />
     <MESSAGE value="added class and comments CalculateModulo" />
     <MESSAGE value="added class and comments FactorialCalculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added class and comments FactorialCalculator" />
+    <MESSAGE value="comments modified to english" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments modified to english" />
   </component>
 </project>
