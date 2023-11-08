@@ -3,31 +3,34 @@ package org.calculus.extended.operations;
 import java.math.BigInteger;
 
 /**
- * Diese Klasse bietet eine Methode zur Berechnung der Fakultät einer nichtnegativen ganzen Zahl.
+ * This class provides a method for calculating the factorial of a non-negative integer.
  */
+
 public class FactorialCalculator {
 
     /**
-     * Berechnet die Fakultät einer gegebenen nichtnegativen ganzen Zahl.
+     * Calculates the factorial of a given non-negative integer.
      *
-     * @param number Die Zahl, von der die Fakultät berechnet werden soll. Muss nichtnegativ sein.
-     * @return Die Fakultät von {@code number}.
-     * @throws IllegalArgumentException wenn {@code number} negativ ist.
+     * @param number The number whose factorial is to be calculated. Must be non-negative.
+     * @return The factorial of {@code number}.
+     * @throws IllegalArgumentException if {@code number} is negative.
      */
+
     public static BigInteger factorial(int number) {
         if (number < 0) {
-            throw new IllegalArgumentException("Die Fakultät von negativen Zahlen ist nicht definiert.");
+            throw new IllegalArgumentException("Factorial of negative numbers is not defined.");
         }
         return factorialHelper(BigInteger.valueOf(number), BigInteger.ONE);
     }
 
     /**
-     * Hilfsmethode zur rekursiven Berechnung der Fakultät.
+     * Helper method for recursive calculation of the factorial.
      *
-     * @param number Der aktuelle Wert, für den die Fakultät berechnet wird.
-     * @param result Das akkumulierte Ergebnis der bisherigen Berechnung.
-     * @return Die Fakultät von {@code number}.
+     * @param number The current value for which the factorial is being calculated.
+     * @param result The accumulated result of the previous calculations.
+     * @return The factorial of {@code number}.
      */
+
     private static BigInteger factorialHelper(BigInteger number, BigInteger result) {
         if (number.equals(BigInteger.ZERO)) {
             return result;
