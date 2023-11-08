@@ -6,17 +6,22 @@ import java.awt.event.ActionListener;
 
 public class BaseSpezialButton extends JButton implements ActionListener {
     private Double specialValue = 0.0;
+    private DisplayTextField displayTextField;
 
-    public BaseSpezialButton(String name) {
-        super(name); 
+    public BaseSpezialButton(String name, DisplayTextField displayTextField) {
+        super(name);
+        this.displayTextField = displayTextField;
         addActionListener(this);
+
+        // Setzen des speziellen Werts basierend auf dem Namen des Buttons
+        setSpecialValue(null); // Dies wird in setSpecialValue abgefangen
     }
 
     public void setSpecialValue(Double specialValue) {
-        if ("e".equals(getText())) {
-            this.specialValue = Math.E;
-        } else if ("pi".equals(getText())) {
+        if ("pi".equalsIgnoreCase(getText())) {
             this.specialValue = Math.PI;
+        } else if ("e".equalsIgnoreCase(getText())) {
+            this.specialValue = Math.E;
         } else {
             this.specialValue = specialValue;
         }
@@ -28,6 +33,6 @@ public class BaseSpezialButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(specialValue);
+        displayTextField.setValue(this.specialValue.toString());
     }
 }
