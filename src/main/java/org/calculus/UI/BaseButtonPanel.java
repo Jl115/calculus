@@ -34,6 +34,15 @@ public class BaseButtonPanel extends JPanel {
                 BaseButton button = new BaseButton(label);
                 button.setBackground(new java.awt.Color(41, 46, 55));
                 button.setForeground(Color.WHITE);
+
+                // Set specific buttons to specific colour
+                if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
+                    button.setBackground(new java.awt.Color(151, 78, 195));
+                }
+                if (label.equals("AC")) {
+                    button.setBackground(new java.awt.Color(80, 64, 153));
+                }
+
                 c.gridx = col;
                 c.gridy = row;
                 add(button, c);
