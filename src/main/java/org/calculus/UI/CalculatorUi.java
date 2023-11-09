@@ -4,6 +4,8 @@
  */
 package org.calculus.UI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author a12so
@@ -766,7 +768,12 @@ public class CalculatorUi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogActionPerformed
 
     private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
-        // TODO add your handling code here:
+        // Create an instance of the HistoryWindow
+        HistoryWindow historyWindow = new HistoryWindow();
+        
+        // Set the default close operation and make the window visible
+        historyWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        historyWindow.setVisible(true);
     }//GEN-LAST:event_btnHistoryActionPerformed
 
     private void btnEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEActionPerformed
