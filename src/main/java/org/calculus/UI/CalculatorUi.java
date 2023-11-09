@@ -373,6 +373,7 @@ public class CalculatorUi extends javax.swing.JFrame {
             }
         });
 
+        BigDisplay.setEditable(false);
         BigDisplay.setText("jTextField1");
 
         btnPoint.setBackground(new java.awt.Color(41, 46, 55));
@@ -393,6 +394,7 @@ public class CalculatorUi extends javax.swing.JFrame {
             }
         });
 
+        smallDisplay.setEditable(false);
         smallDisplay.setText("jTextField1");
 
         btnPercent.setBackground(new java.awt.Color(41, 46, 55));

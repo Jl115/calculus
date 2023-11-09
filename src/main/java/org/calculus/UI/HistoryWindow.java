@@ -4,6 +4,8 @@
  */
 package org.calculus.UI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author a12so
@@ -43,27 +45,42 @@ public class HistoryWindow extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(19, 22, 27));
 
+        HistoryOne.setEditable(false);
         HistoryOne.setText("jTextField1");
 
+        HistoryTwo.setEditable(false);
         HistoryTwo.setText("jTextField1");
 
+        HistoryThree.setEditable(false);
         HistoryThree.setText("jTextField1");
 
+        HistoryFour.setEditable(false);
         HistoryFour.setText("jTextField1");
 
+        HistoryFive.setEditable(false);
         HistoryFive.setText("jTextField1");
 
+        HistorySix.setEditable(false);
         HistorySix.setText("jTextField1");
 
+        HistorySeven.setEditable(false);
         HistorySeven.setText("jTextField1");
 
+        HistoryEight.setEditable(false);
         HistoryEight.setText("jTextField1");
 
+        HistoryNine.setEditable(false);
         HistoryNine.setText("jTextField1");
 
+        HistoryTen.setEditable(false);
         HistoryTen.setText("jTextField1");
 
         btnCloseHistory.setText("Close History");
+        btnCloseHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseHistoryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,6 +143,11 @@ public class HistoryWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCloseHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseHistoryActionPerformed
+        // Close the HistoryWindow
+        dispose();
+    }//GEN-LAST:event_btnCloseHistoryActionPerformed
 
     /**
      * @param args the command line arguments
