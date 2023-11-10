@@ -43,6 +43,16 @@ public class BaseButtonPanel extends JPanel {
                     button.setBackground(new java.awt.Color(80, 64, 153));
                 }
 
+                // Set specific size for buttons in the specified rows and columns
+                if (row == 4 || col == 3) {
+                    button.setPreferredSize(new Dimension(100, 50)); // Set desired size
+                } else {
+                    button.setPreferredSize(new Dimension(50, 50)); // Set default size
+                }
+
+                // Customize font
+                button.setFont(new Font("Arial", Font.PLAIN, 16));
+
                 c.gridx = col;
                 c.gridy = row;
                 add(button, c);
