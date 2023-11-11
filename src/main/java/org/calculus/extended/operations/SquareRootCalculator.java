@@ -12,6 +12,7 @@ public class SquareRootCalculator {
      * @return The calculated square root of {@code number}.
      * @throws IllegalArgumentException If {@code number} is negative.
      */
+
     public static double sqrt(double number) {
         if (number < 0) {
             throw new IllegalArgumentException("Square root of a negative number cannot be calculated.");

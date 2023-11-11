@@ -17,7 +17,7 @@ public class Calculator {
     //public static final double GRAVITATIONAL_CONSTANT = 6.67430e-11; // Gravitational constant in m^3 kg^-1 s^-2 (commented out)
     public static final double E = Math.E; // The value of Euler's number
 
-    private Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
+    private final Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
 
     /**
      * Adds two double values.

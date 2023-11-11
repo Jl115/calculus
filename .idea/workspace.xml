@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="added class and comments calculatorTEsts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="calculatorTest class modified">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +159,7 @@
       <workItem from="1699463334274" duration="6176000" />
       <workItem from="1699700268127" duration="1334000" />
       <workItem from="1699705532187" duration="1562000" />
+      <workItem from="1699710052173" duration="460000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -288,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699680579473</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="calculatorTest class modified">
+      <option name="closed" value="true" />
+      <created>1699710268094</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699710268094</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +327,7 @@
     <MESSAGE value="added class and comments PowerCalculator" />
     <MESSAGE value="added class and comments SquareRootCalculator" />
     <MESSAGE value="added class and comments calculatorTEsts" />
-    <option name="LAST_COMMIT_MESSAGE" value="added class and comments calculatorTEsts" />
+    <MESSAGE value="calculatorTest class modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="calculatorTest class modified" />
   </component>
 </project>
