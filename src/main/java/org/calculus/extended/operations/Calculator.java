@@ -14,7 +14,7 @@ public class Calculator {
 
 
 
-    private Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
+    private final Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
 
     /**
      * Adds two double values.
@@ -60,7 +60,7 @@ public class Calculator {
 
     public static double sqrt(double number) {
         if (number < 0) {
-            throw new ArithmeticException("Wurzel aus einer negativen Zahl ist nicht definiert.");
+            throw new ArithmeticException("Square root of a negative number is not defined.");
         }
         return Math.sqrt(number);
     }
@@ -87,10 +87,11 @@ public class Calculator {
 
     public static double nthRoot(int n, double x) {
         if (x < 0 && n % 2 == 0) {
-            throw new ArithmeticException("x-te Wurzel aus einer negativen Zahl ist für gerade n nicht definiert.");
+            throw new ArithmeticException("An even nth root of a negative number is not defined.");
         }
         return Math.pow(x, 1.0 / n);
     }
+
     /**
      * Calculates the percentage of a total.
      *
@@ -99,17 +100,16 @@ public class Calculator {
      * @return The calculated percentage of the total.
      */
 
-
     public static double percentOf(double percentage, double total) {
         return (percentage / 100) * total;
     }
+
     /**
      * Squares a number.
      *
      * @param number The number to square.
      * @return The square of number.
      */
-
 
     public static double square(double number) {
         return Math.pow(number, 2);
@@ -136,12 +136,13 @@ public class Calculator {
     public static double log10(double number) {
         return Math.log10(number);
     }
+
     /**
      * Calculates the logarithm of a number with an arbitrary base.
      *
      * @param base   The base of the logarithm.
      * @param number The number to calculate the logarithm of.
-     * @return The logarithm of number with base base.
+     * @return The logarithm of number with basebase.
      */
 
     public static double logBaseN(double base, double number) {
@@ -190,7 +191,7 @@ public class Calculator {
 
     public static BigInteger factorial(int number) {
         if (number < 0) {
-            throw new ArithmeticException("Fakultät von negativen Zahlen ist nicht definiert.");
+            throw new ArithmeticException("Factorial of negative numbers is not defined.");
         }
         BigInteger result = BigInteger.ONE;
         for (int i = 2; i <= number; i++) {
