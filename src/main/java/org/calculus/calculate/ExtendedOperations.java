@@ -1,4 +1,4 @@
-package org.calculus.extended.operations;
+package org.calculus.calculate;
 
 /**
  * The Calculator class provides a variety of arithmetic and mathematical functions,
@@ -6,11 +6,11 @@ package org.calculus.extended.operations;
  * logarithmic calculations, factorial, and memory storage capabilities.
  */
 
-public class Calculator {
+public class ExtendedOperations {
 
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        calc.factorial(100);
+        ExtendedOperations extendedOperations = new ExtendedOperations();
+
     }
     
     // like this just not in console
