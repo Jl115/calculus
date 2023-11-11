@@ -12,10 +12,7 @@ import java.util.Map;
 
 public class Calculator {
 
-    // Constants
-    public static final double PI = Math.PI; // The value of PI
-    //public static final double GRAVITATIONAL_CONSTANT = 6.67430e-11; // Gravitational constant in m^3 kg^-1 s^-2
-    public static final double E = Math.E; // The value of Euler's number
+
 
     private Map<String, Double> memory = new HashMap<>(); // Memory storage for calculator values
 
@@ -27,85 +24,39 @@ public class Calculator {
      * @return The sum of a and b
      */
 
-    public static double add(double a, double b) {
-        return a + b;
+
+
+
+
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
     }
 
-    /**
-     * Subtracts the second double value from the first.
-     *
-     * @param a The minuend.
-     * @param b The subtrahend.
-     * @return The difference of a and b.
-     */
+    //  public void divide(double a, double b) {
+    //     if (b == 0) {
+    //         System.out.println("0");
+    //     } else {
+    //         System.out.println(String.valueOf(a/b));
+    //     }
+    // }
+    
 
-    public static double subtract(double a, double b) {
-        return a - b;
+
+    // like this just not in console
+    public void modulo(int a, int b) {
+        if (b == 0 || a == 0) {
+            System.out.println("0");
+        }else 
+        System.out.println( String.valueOf(a % b));
     }
 
-    /**
-     * Multiplies two double values.
-     *
-     * @param a The first multiplicand.
-     * @param b The second multiplicand.
-     * @return The product of a and b.
-     */
-
-    public static double multiply(double a, double b) {
-        return a * b;
+  // like this just not in console
+    public void potenzCalc(double base, double exponent) {
+        System.out.println( String.valueOf(Math.pow(base, exponent)));
     }
 
-    /**
-     * Divides the first double value by the second.
-     *
-     * @param a The dividend.
-     * @param b The divisor.
-     * @return The quotient of a and b.
-     * @throws ArithmeticException If the divisor is zero.
-     */
-
-    public static double divide(double a, double b) {
-        if (b == 0) {
-            throw new ArithmeticException("Division durch Null ist nicht erlaubt.");
-        }
-        return a / b;
-    }
-
-    /**
-     * Calculates the modulo of two integers.
-     *
-     * @param a The dividend.
-     * @param b The divisor.
-     * @return The remainder of the division of a by b.
-     * @throws ArithmeticException If the divisor is zero.
-     */
-
-    public static int modulo(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Modulo Null ist nicht erlaubt.");
-        }
-        return a % b;
-    }
-
-    /**
-     * Raises a base to the power of an exponent.
-     *
-     * @param base     The base value.
-     * @param exponent The exponent value.
-     * @return The result of base raised to the power of exponent.
-     */
-
-    public static double power(double base, double exponent) {
-        return Math.pow(base, exponent);
-    }
-
-    /**
-     * Calculates the square root of a number.
-     *
-     * @param number The number to calculate the square root of.
-     * @return The square root of number.
-     * @throws ArithmeticException If the number is negative.
-     */
+   
 
     public static double sqrt(double number) {
         if (number < 0) {
