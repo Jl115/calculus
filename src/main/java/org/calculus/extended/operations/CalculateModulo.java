@@ -1,8 +1,9 @@
 package org.calculus.extended.operations;
 
-/**
- * The CalculateModulo class provides a method to calculate the modulo of two numbers.
- */
+    /**
+    * The CalculateModulo class provides a method to calculate the modulo of two numbers.
+     */
+
 public class CalculateModulo {
 
     /**
@@ -13,6 +14,7 @@ public class CalculateModulo {
      * @return the modulo of number1 and number2
      * @throws IllegalArgumentException if the divisor is 0
      */
+
     public static int calculateModulo(int number1, int number2) {
         // It is important to check that number2 is not 0 to prevent division by zero.
         if (number2 == 0) {

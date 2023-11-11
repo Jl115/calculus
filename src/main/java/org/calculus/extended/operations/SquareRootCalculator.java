@@ -3,6 +3,7 @@ package org.calculus.extended.operations;
 /**
  * This class provides a method for calculating the square root of a number.
  */
+
 public class SquareRootCalculator {
 
     /**
