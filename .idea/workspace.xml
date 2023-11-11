@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="added class and comments SquareRootCalculator">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculatorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculatorTests.java" afterDir="false" />
+    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="added class and comments calculatorTEsts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,7 +58,35 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.CalculatorTests.testDivideByZero">
+  <component name="RunManager" selected="JUnit.org.calculus.extended.operations in calculus">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.calculus.Main" />
+      <module name="calculus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.calculus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.calculus.extended.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
+      <option name="MAIN_CLASS_NAME" value="org.calculus.extended.operations.CalculatorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculatorTests.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculus" />
       <extension name="coverage">
@@ -72,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTests.testDivide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTests.testNthRoot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculus" />
       <extension name="coverage">
         <pattern>
@@ -82,13 +113,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
       <option name="MAIN_CLASS_NAME" value="org.calculus.extended.operations.CalculatorTests" />
-      <option name="METHOD_NAME" value="testDivide" />
+      <option name="METHOD_NAME" value="testNthRoot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTests.testDivideByZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="org.calculus.extended.operations in calculus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculus" />
       <extension name="coverage">
         <pattern>
@@ -97,52 +128,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
-      <option name="MAIN_CLASS_NAME" value="org.calculus.extended.operations.CalculatorTests" />
-      <option name="METHOD_NAME" value="testDivideByZero" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTests.testMultiply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculus" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.calculus.extended.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
-      <option name="MAIN_CLASS_NAME" value="org.calculus.extended.operations.CalculatorTests" />
-      <option name="METHOD_NAME" value="testMultiply" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTests.testSubtract" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculus" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.calculus.extended.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
-      <option name="MAIN_CLASS_NAME" value="org.calculus.extended.operations.CalculatorTests" />
-      <option name="METHOD_NAME" value="testSubtract" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CalculatorTests.testDivideByZero" />
-        <item itemvalue="JUnit.CalculatorTests.testDivide" />
-        <item itemvalue="JUnit.CalculatorTests.testMultiply" />
-        <item itemvalue="JUnit.CalculatorTests.testSubtract" />
+        <item itemvalue="JUnit.org.calculus.extended.operations in calculus" />
+        <item itemvalue="JUnit.CalculatorTests.testNthRoot" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CalculatorTests.testAdd" />
+        <item itemvalue="JUnit.CalculatorTests" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +156,9 @@
       <workItem from="1699295425342" duration="360000" />
       <workItem from="1699296057427" duration="3147000" />
       <workItem from="1699458671756" duration="982000" />
-      <workItem from="1699463334274" duration="5863000" />
+      <workItem from="1699463334274" duration="6176000" />
+      <workItem from="1699700268127" duration="1334000" />
+      <workItem from="1699705532187" duration="1562000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -281,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699620114950</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added class and comments calculatorTEsts">
+      <option name="closed" value="true" />
+      <created>1699680579473</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699680579473</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +317,7 @@
     <MESSAGE value="comments modified to english" />
     <MESSAGE value="added class and comments PowerCalculator" />
     <MESSAGE value="added class and comments SquareRootCalculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added class and comments SquareRootCalculator" />
+    <MESSAGE value="added class and comments calculatorTEsts" />
+    <option name="LAST_COMMIT_MESSAGE" value="added class and comments calculatorTEsts" />
   </component>
 </project>
