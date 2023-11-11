@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="calculatorTest class modified">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/Calculator.java" afterDir="false" />
-    </list>
+    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="SquareRootCalculator class modified" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +157,7 @@
       <workItem from="1699463334274" duration="6176000" />
       <workItem from="1699700268127" duration="1334000" />
       <workItem from="1699705532187" duration="1562000" />
-      <workItem from="1699710052173" duration="460000" />
+      <workItem from="1699710052173" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -297,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699710268094</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="SquareRootCalculator class modified">
+      <option name="closed" value="true" />
+      <created>1699710828855</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699710828855</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +334,7 @@
     <MESSAGE value="added class and comments SquareRootCalculator" />
     <MESSAGE value="added class and comments calculatorTEsts" />
     <MESSAGE value="calculatorTest class modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="calculatorTest class modified" />
+    <MESSAGE value="SquareRootCalculator class modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="SquareRootCalculator class modified" />
   </component>
 </project>
