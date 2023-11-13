@@ -115,3 +115,113 @@
     - Akzeptanzkriterium: Das Design ermöglicht die Eingabe von zwei oder mehr Zahlen und zeigt klar gekennzeichnete Schaltflächen für jede Grundoperation.
       
     - Akzeptanzkriterium: Die Historie ist klar im User Interface sichtbar und zeigt die letzten durchgeführten Berechnungen in einer chronologischen Liste an.
+
+- # Neue Tasks für Sprint 2
+- ## 11.11.2023
+-  ## Task 1: Implementierung der Winkelumrechnung
+### Teilaufgaben
+1. **GUI-Elemente erstellen:** Erstelle Eingabefelder für die Eingabe von Winkeln in Grad und Radiant.
+2. **Umrechnungslogik:** Implementiere die Logik zur Umrechnung zwischen Grad und Radiant.
+3. **Ergebnisanzeige:** Stelle sicher, dass das Ergebnis korrekt im GUI angezeigt wird.
+
+### Akzeptanzkriterien
+- Eingabefelder für Grad und Radiant vorhanden.
+- Korrekte Umrechnung zwischen den Einheiten.
+- Klare und präzise Ergebnisanzeige.
+
+## Task 2: Implementierung der Basis-Winkelfunktionen
+### Teilaufgaben
+1. **GUI-Tasten hinzufügen:** Füge Tasten für Sinus, Kosinus und Tangens hinzu.
+2. **Berechnungslogik:** Implementiere die Berechnungslogik für diese Funktionen.
+3. **Ergebnisanzeige:** Zeige das Ergebnis der Berechnung im GUI an.
+
+### Akzeptanzkriterien
+- GUI-Tasten für Sinus, Kosinus und Tangens.
+- Korrekte Berechnung der Funktionen.
+- Klare Ergebnisanzeige.
+
+## Task 3: Implementierung der inversen Winkelfunktionen
+### Teilaufgaben
+1. **GUI-Tasten hinzufügen:** Füge Tasten für die inversen Funktionen Arcsin, Arccos, Arctan hinzu.
+2. **Berechnungslogik:** Implementiere die Logik für die inversen Funktionen.
+3. **Ergebnisanzeige:** Anzeige der Ergebnisse im gewählten Winkelmaß.
+
+### Akzeptanzkriterien
+- GUI-Tasten für Arcsin, Arccos, Arctan.
+- Korrekte Berechnung der inversen Funktionen.
+- Anzeige in Grad oder Radiant, je nach Nutzerauswahl.
+
+## Task 4: Implementierung hyperbolischer Winkelfunktionen
+### Teilaufgaben
+1. **GUI-Tasten hinzufügen:** Füge Tasten für Sinh, Cosh, Tanh und deren Inverse hinzu.
+2. **Berechnungslogik:** Implementiere die Logik für diese hyperbolischen Funktionen.
+3. **Ergebnisanzeige:** Zeige das korrekte Ergebnis im GUI an.
+
+### Akzeptanzkriterien
+- GUI-Tasten für hyperbolische Funktionen und deren Inverse.
+- Korrekte und präzise Berechnung.
+- Klare Ergebnisanzeige.
+
+## Task 5: Implementierung von Dreiecksberechnungen
+### Teilaufgaben
+1. **Eingabeoptionen:** Implementiere Eingabeoptionen für die erforderlichen Dreiecksmaße.
+2. **Berechnungslogik:** Erstelle die Logik zur Berechnung von Seiten, Winkeln, Höhe und Fläche.
+3. **Ergebnisanzeige:** Zeige die Ergebnisse in einer verständlichen Form an.
+
+### Akzeptanzkriterien
+- Eingabeoptionen für verschiedene Dreiecksmaße.
+- Korrekte Berechnung von Seiten, Winkeln, Höhe und Fläche.
+- Klare und verständliche Ergebnisanzeige.
+
+## Task 6: Implementierung des Variablentausches
+### Teilaufgaben
+1. **GUI-Taste:** Füge eine Taste oder Option zum Tauschen der Werte von x und y hinzu.
+2. **Tauschlogik:** Implementiere die Logik zum Tauschen der Werte.
+
+### Akzeptanzkriterien
+- Vorhandensein einer Tauschfunktion im GUI.
+- Sofortiger und korrekter Tausch der Werte.
+
+## Task 7: Implementierung der Speicheroperationen
+### Teilaufgaben
+1. **GUI-Tasten:** Füge Tasten für Speichern, Addieren, Subtrahieren und Multiplizieren hinzu.
+2. **Speicherlogik:** Implementiere die Logik für die Speicherinteraktionen.
+
+### Akzeptanzkriterien
+- GUI-Tasten für Speicheroperationen.
+- Korrekte Durchführung der Speicheroperationen.
+## Task 8: Implementierung der Nachkommastellen-Einstellung
+### Teilaufgaben
+1. **GUI-Option:** Implementiere eine Option zur Einstellung der Nachkommastellen.
+2. **Logik:** Stelle sicher, dass die Einstellung sich auf die Ergebnisanzeige auswirkt.
+
+### Akzeptanzkriterien
+- Einstellbare Nachkommastellen im GUI.
+- Korrekte Anwendung der Einstellung auf die Ergebnisanzeige.
+
+## Task 9: Implementierung der Anzeige im technischen Format
+### Teilaufgaben
+1. **GUI-Option:** Füge eine Option für die Anzeige im technischen Format hinzu.
+2. **Formatierungslogik:** Implementiere die Logik zur Darstellung der Ergebnisse im technischen Format.
+
+### Akzeptanzkriterien
+- Option zur Anzeige im technischen Format vorhanden.
+- Korrekte und klare Darstellung im gewählten Format.
+
+### Teilaufgaben
+1. **GUI-Option:** Implementiere eine Option zur Einstellung der Nachkommastellen.
+2. **Logik:** Stelle sicher, dass die Einstellung sich auf die Ergebnisanzeige auswirkt.
+
+### Akzeptanzkriterien
+- Einstellbare Nachkommastellen im GUI.
+- Korrekte Anwendung der Einstellung auf die Ergebnisanzeige.
+
+## Task 9: Implementierung der Anzeige im technischen Format
+### Teilaufgaben
+1. **GUI-Option:** Füge eine Option für die Anzeige im technischen Format hinzu.
+2. **Formatierungslogik:** Implementiere die Logik zur Darstellung der Ergebnisse im technischen Format.
+
+### Akzeptanzkriterien
+- Option zur Anzeige im technischen Format vorhanden.
+- Korrekte und klare Darstellung im gewählten Format.
+
