@@ -1,4 +1,4 @@
-# Projektname
+# Calculus Merge Guide
 
 ## Einführung
 Diese Anleitung beschreibt, wie Sie Änderungen im `dev-merge-branch` unseres Projekts mit IntelliJ IDEA integrieren können. Bitte folgen Sie diesen Schritten, um einen reibungslosen Merge-Prozess zu gewährleisten.
