@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="Powercalculator class modified">
+    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="CalculateModulo and SquareRootCalculator class modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +159,7 @@
       <workItem from="1699463334274" duration="6176000" />
       <workItem from="1699700268127" duration="1334000" />
       <workItem from="1699705532187" duration="1562000" />
-      <workItem from="1699710052173" duration="2587000" />
+      <workItem from="1699710052173" duration="4433000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -313,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699711176077</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CalculateModulo and SquareRootCalculator class modified">
+      <option name="closed" value="true" />
+      <created>1699712798306</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699712798306</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +354,7 @@
     <MESSAGE value="calculatorTest class modified" />
     <MESSAGE value="SquareRootCalculator class modified" />
     <MESSAGE value="Powercalculator class modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Powercalculator class modified" />
+    <MESSAGE value="CalculateModulo and SquareRootCalculator class modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="CalculateModulo and SquareRootCalculator class modified" />
   </component>
 </project>
