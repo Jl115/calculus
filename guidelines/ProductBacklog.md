@@ -29,8 +29,8 @@
 **möchte ich** eine temporäre Historie meiner Berechnungen haben,  
 **damit** ich meine letzten Aktionen nachverfolgen kann, bevor ich den Taschenrechner ausschalte.
 
-## - Neue Userstorys
-# - 11.11.2023
+
+# - Neue Userstorys 11.11.2023
 ## User Stories
 
 ### Winkelumrechnung
