@@ -14,25 +14,34 @@ public class DisplayTextField extends JTextField {
     }
 
     public void setValue(String value) {
-        if (value.equals("0.0")) {
-            this.value = value;
+        if (this.value.equals("0.0")) {
+        this.value = value;
         this.setText(value);
         this.repaint();
         this.revalidate();
-        } else if (this.value.contains("AC")) {
-            this.value = "0.0";
-            this.setText(value);
-            this.repaint();
-            this.revalidate();
-        }
+        } 
+        // else if (this.value.contains("AC")) {
+        //     this.value = "0.0";
+        //     this.setText(value);
+        //     this.repaint();
+        //     this.revalidate();
+        // }
         else {
         this.value += value;
-        this.setText(this.value + value);
+        this.setText(this.value );
         this.repaint();
         this.revalidate();
         }
         
     }
+    public void clear() {
+        System.out.println("Clear method called"); // Zum Debuggen
+        this.value = "0.0"; // Setzt den internen Wert
+        this.setText("0.0"); // Aktualisiert den Text im Textfeld
+        this.repaint();
+        this.revalidate();
+    }
+    
 
     public String getValue() {
         return value;
