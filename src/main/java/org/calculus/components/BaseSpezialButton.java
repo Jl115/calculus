@@ -22,8 +22,11 @@ public class BaseSpezialButton extends JButton implements ActionListener {
             this.specialValue = Math.PI;
         } else if ("e".equalsIgnoreCase(getText())) {
             this.specialValue = Math.E;
-        } else {
-            this.specialValue = specialValue;
+        } else if ("G".equalsIgnoreCase(getText())) {
+            this.specialValue = 6.6743 ;
+        }
+         else {
+            
         }
     }
 

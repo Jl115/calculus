@@ -11,11 +11,12 @@ import org.calculus.components.DisplayTextField;
 
 
 public class CallculatorPanel extends JPanel {
-    private DisplayTextField displayTextField; // Diese Referenz wird an ExtendedButtonPanel übergeben
-
+    private DisplayTextField displayTextField = new DisplayTextField(); // Diese Referenz wird an ExtendedButtonPanel übergeben
+    private ExtendedButtonPanel extendedButtonPanel;
     public CallculatorPanel() {
         //instantiating the components
-         displayTextField = new DisplayTextField();
+         
+        extendedButtonPanel = new ExtendedButtonPanel(displayTextField);
     
         // setting the layout of the panel
         this.setLayout(new BorderLayout());
@@ -29,14 +30,15 @@ public class CallculatorPanel extends JPanel {
 
         JTextField calculationField = new JTextField("Calculation");
         calculationField.setHorizontalAlignment(JTextField.RIGHT); // align text to the right
+        calculationField.setEditable(false);
         displayPanel.add(calculationField, BorderLayout.PAGE_END);
 
         // adding the display panel to the main panel
         this.add(displayPanel, BorderLayout.PAGE_START);
         // adding extended buttons to the panel
-        this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
+        this.add(extendedButtonPanel, BorderLayout.LINE_START);
         // adding the BaseButtonPanel to the panel
-        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel();
+        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField);
         this.add(BaseButtonPanel, BorderLayout.EAST);
     }
 }
