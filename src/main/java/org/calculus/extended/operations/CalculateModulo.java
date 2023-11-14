@@ -22,20 +22,4 @@ public class CalculateModulo {
         }
         return number1 % number2;
     }
-
-    /**
-     * Calculates the modulo of two integers.
-     * Returns 0 if either of the arguments is 0.
-     *
-     * @param a The first integer.
-     * @param b The second integer.
-     * @return The modulo of a and b, or 0 if either a or b is 0.
-     */
-
-    public static int modulo(int a, int b) {
-        if (b == 0 || a == 0) {
-            return 0;
-        }
-        return a % b;
-    }
 }

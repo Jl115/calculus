@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fde1e76-b784-4a30-b0df-fa22636d3113" name="Changes" comment="">
+    <list default="true" id="2fde1e76-b784-4a30-b0df-fa22636d3113" name="Changes" comment="CalculateModulo class modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/calculate/ExtendedOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/calculate/ExtendedOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculateModulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/CalculateModulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/SquareRootCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/extended/operations/SquareRootCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,16 +16,56 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "extended-operations",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;extended-operations&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.org.calculus.extended.operations in calculus">
+    <configuration name="ExtendedOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.calculus.calculate.ExtendedOperations" />
+      <module name="calculus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.calculus.calculate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.calculus.extended.operations in calculus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.calculus.extended.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.calculus.extended.operations" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.org.calculus.extended.operations in calculus" />
+        <item itemvalue="Application.ExtendedOperations" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="class modified" />
+    <MESSAGE value="CalculateModulo class modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="CalculateModulo class modified" />
   </component>
 </project>
