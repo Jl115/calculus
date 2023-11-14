@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="Logic for History.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/history/Addition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/history/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-
-    <list default="true" id="fc36a7d1-f3b3-4a02-8417-526a8fa609fb" name="Changes" comment="creating packages">
-
+    <list default="true" id="512830d1-c6d6-470f-bd46-d78838da65e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Addition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Division.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Multiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Subtraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/basicOperations/Subtraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/history/Addition.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;TEMPORARE-HISTORIE&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/joeldev/Projects/1_Schule/Semester3/calculus",
+    "git-widget-placeholder": "basic-operations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
-
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.calculus.Main" />
@@ -104,10 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699186677567</updated>
-
       <workItem from="1699275210432" duration="7193000" />
       <workItem from="1699376362332" duration="7333000" />
-
       <workItem from="1699187920949" duration="3567000" />
       <workItem from="1699280695197" duration="170000" />
     </task>
@@ -126,7 +106,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1699190300122</updated>
-
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -139,34 +118,10 @@
       <map>
         <entry key="MAIN">
           <value>
-
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="TEMPORÄRE-HISTORIE" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-
             <State />
-
           </value>
         </entry>
       </map>
     </option>
   </component>
-
-
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
-    <MESSAGE value="creating packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating packages" />
-  </component>
-
 </project>

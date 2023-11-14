@@ -10,7 +10,7 @@ public class Subtraction {
         this.A = A;
     }
 
-    public String getRechnung() {
+    public String getSubtraction() {
         String[] express = A.split("\\-");
         for(String number: express) {
             B += Double.parseDouble(number);
@@ -41,14 +41,5 @@ public class Subtraction {
 
     public void setC(String c) {
         C = c;
-    }
-
-    @Override
-    public String toString() {
-        return "Subtraction{" +
-                "A='" + A +'\'' +
-                ", B=" + B +
-                ", C='" + +'\'' +
-                '}';
     }
 }

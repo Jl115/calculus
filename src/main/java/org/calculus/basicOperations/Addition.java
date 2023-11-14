@@ -10,7 +10,7 @@ public class Addition {
         this.A = A;
     }
 
-    public String getRechnung() {
+    public String getAddition() {
         String[] express = A.split("\\+");
         for(String number: express){
             B += Double.parseDouble(number);
@@ -19,6 +19,7 @@ public class Addition {
         B = 0;
         return C;
     }
+
 
     public String getA() {
         return A;
@@ -43,12 +44,12 @@ public class Addition {
         C = c;
     }
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Addition{" +
                 "A='" + A + '\'' +
                 ", B=" + B +
                 ", C='" + C +'\'' +
                 '}';
-    }
+    } */
 }
