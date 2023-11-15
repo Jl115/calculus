@@ -7,10 +7,9 @@ import static org.junit.Assert.*;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
-
 public class MathExpressionEvaluatorTest {
 
-    /* @Test
+     @Test
      public void testSimpleExpression() {
          assertEquals(8, MathExpressionEvaluator.evaluate("6 + 2"));
      }
@@ -45,13 +44,8 @@ public class MathExpressionEvaluatorTest {
          assertEquals(16, MathExpressionEvaluator.evaluate("10 + 2 * 6 / (4 - 2)"));
      }
 
-    public static class CalculatorTest {
-        @Test(expected = ArithmeticException.class)
-        public void testDivisionByZero() {
-            MathExpressionEvaluator.evaluate("6 / 0");
-        }
-    }
 }
 */
+
 
 
