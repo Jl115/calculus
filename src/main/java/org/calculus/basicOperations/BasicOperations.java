@@ -1,38 +1,30 @@
 package org.calculus.basicOperations;
 
-import java.util.Arrays;
-import java.util.Scanner;
 public class BasicOperations {
 
-    public static void main(String[] args) {
+    private static double addition(double a, double b){
+        double result = a + b;
+        return result;
+    }
 
-        Scanner scanner = new Scanner(System.in);
-        String numb1 = null;
-        double result = 0.0;
+    private static double subtraktion(double a, double b){
+        double result = a - b;
+        return result;
+    }
 
+    private static double multiplikation(double a, double b){
+        double result = a * b;
+        return result;
+    }
 
-
-
-
-        if (numb1.contains("-")) {
-            String[] subtraction = numb1.split("-");
-            result = Double. parseDouble(subtraction[0]) - Double. parseDouble(subtraction[1]);
+    private static double division (double a, double b){
+        double result = 0;
+        if(a == 0 || b == 0){
+            result = 0;
         }
-        else if (numb1.contains("\\+")){
-            String[] addition = numb1.split("\\+");
-            result = Double. parseDouble(addition[0]) + Double. parseDouble(addition[1]);
+        else{
+            result = a / b;
         }
-        else if (numb1.contains("/")){
-            String[] division = numb1.split("/");
-            result = Double. parseDouble(division[0])* Double. parseDouble(division[1]);
-        }
-        else {
-            String[] multiplication = numb1.split("\\*");
-            result = Double. parseDouble(multiplication[0]) / Double. parseDouble(multiplication[1]);
-        }
-
-
-
-        System.out.print(result);
+        return result;
     }
 }
