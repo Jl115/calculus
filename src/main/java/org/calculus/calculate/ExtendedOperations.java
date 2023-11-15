@@ -11,36 +11,36 @@ public class ExtendedOperations {
     public static void main(String[] args) {
         ExtendedOperations extendedOperations = new ExtendedOperations();
 
+        // Beispielaufrufe
+        String moduloResult = extendedOperations.modulo(10, 3);
+        String potenzCalcResult = extendedOperations.potenzCalc(2, 3);
+        String squareRootResult = extendedOperations.squareRoot(9);
+        String factorialResult = extendedOperations.factorial(5);
     }
-    
-    // like this just not in console
-    public void modulo(int a, int b) {
+
+    public String modulo(int a, int b) {
         if (b == 0 || a == 0) {
-            System.out.println("0");
-        }else 
-        System.out.println( String.valueOf(a % b));
+            return "0";
+        }
+        return String.valueOf(a % b);
     }
 
-  // like this just not in console
-    public void potenzCalc(double base, double exponent) {
-        System.out.println( String.valueOf(Math.pow(base, exponent)));
+    public String potenzCalc(double base, double exponent) {
+        return String.valueOf(Math.pow(base, exponent));
     }
 
-    // like this just not in console
-    public void  squareRoot(double number) {
+    public String squareRoot(double number) {
         if (number < 0) {
-            System.out.println("Not a Number");
-        }else 
-        System.out.println(Math.sqrt(number));
+            return "Not a Number";
+        }
+        return String.valueOf(Math.sqrt(number));
     }
 
-    //aproved but not in console
-    public void factorial(double n) {
+    public String factorial(double n) {
         double result = 1.0;
         for (double i = 2; i <= n; i++) {
             result *= i;
         }
-        System.out.println(result);
+        return String.valueOf(result);
     }
-    
 }
