@@ -16,12 +16,6 @@ public class ExtendedOperations {
         String potenzCalcResult = extendedOperations.potenzCalc(2, 3);
         String squareRootResult = extendedOperations.squareRoot(9);
         String factorialResult = extendedOperations.factorial(5);
-
-        // Ergebnisse anzeigen (optional)
-        System.out.println("Modulo: " + moduloResult);
-        System.out.println("PotenzCalc: " + potenzCalcResult);
-        System.out.println("SquareRoot: " + squareRootResult);
-        System.out.println("Factorial: " + factorialResult);
     }
 
     public String modulo(int a, int b) {
