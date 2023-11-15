@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
         Addition addition = new Addition("5+5+5");
         Addition addition1 = new Addition("6+8+20+16+55");
         History history = new History();
@@ -35,9 +34,11 @@ public class Main {
         }
 
         new CallculatorFrame();
-=======
+
         System.out.println(MathExpressionEvaluator.calculate("5.36+5*5+(8*3)"));
->>>>>>> brackets-and-chain-bills
+ brackets-and-chain-bills
+
+        System.out.println(MathExpressionEvaluator.calculate("5.36+5*5+(8*3)"));
+ brackets-and-chain-bills
     }
 }
-//Miralem
