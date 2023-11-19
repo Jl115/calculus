@@ -34,11 +34,5 @@ public class Main {
         }
 
         new CallculatorFrame();
-
-        System.out.println(MathExpressionEvaluator.calculate("5.36+5*5+(8*3)"));
-
-
-        System.out.println(MathExpressionEvaluator.calculate("5.36+5*5+(8*3)"));
-
     }
 }

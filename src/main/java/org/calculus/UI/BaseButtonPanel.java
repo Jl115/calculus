@@ -7,14 +7,14 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 
 import org.calculus.components.BaseButton;
+import org.calculus.components.CallculationTextField;
 import org.calculus.components.DisplayTextField;
 
 public class BaseButtonPanel extends JPanel {
 
-    private BaseButton[] buttons = new BaseButton[10];
-    private DisplayTextField displayTextField;
+    
 
-    public BaseButtonPanel(DisplayTextField displayTextField) {
+    public BaseButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField) {
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
@@ -24,7 +24,7 @@ public class BaseButtonPanel extends JPanel {
 
         String[][] buttonLabels = {
             {"AC", "+/-", "%", "/"},
-            {"7", "8", "9", "x"},
+            {"7", "8", "9", "*"},
             {"4", "5", "6", "-"},
             {"1", "2", "3", "+"},
             {"0", ".", "="}
@@ -33,7 +33,7 @@ public class BaseButtonPanel extends JPanel {
         for (int row = 0; row < buttonLabels.length; row++) {
             for (int col = 0; col < buttonLabels[row].length; col++) {
                 String label = buttonLabels[row][col];
-                BaseButton button = new BaseButton(label, displayTextField);
+                BaseButton button = new BaseButton(label, displayTextField, callculationTextField);
                 c.gridx = col;
                 c.gridy = row;
                 add(button, c);

@@ -1,9 +1,12 @@
 package org.calculus.bracketsAndChainBills;
 import java.util.Stack;
 
+import org.calculus.calculate.ExtendedOperations;
+
 public class MathExpressionEvaluator {
-    private static String currentExpression = "";
+    private static String currentExpression = "0";
     private static String currentResult = "";
+    private static ExtendedOperations extendedOperations = new ExtendedOperations();
 
     public static double calculate(String expression) {
         //Macht aus der String Expression einen Char Array und Initialisiert 2 Stacks
@@ -19,9 +22,10 @@ public class MathExpressionEvaluator {
             if (tokens[i] >= '0' && tokens[i] <= '9'|| tokens[i] == '.') {
                 StringBuilder sbuf = new StringBuilder();
                 //Solange i eine Zahl abbildet wird sie diesem neu gebautem String hinzugefügt
-                while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9' || tokens[i] == '.') {
+                while (i < tokens.length && (tokens[i] >= '0' && tokens[i] <= '9' || tokens[i] == '.')) {
                     sbuf.append(tokens[i++]);
                 }
+                
                 //der Zahlen String wird in den Value Stack gelegt und i um ein veringert um die for schleife weiter zu durchlaufen
                 values.push(Double.parseDouble(sbuf.toString()));
                 i--;
@@ -71,13 +75,11 @@ public class MathExpressionEvaluator {
             case '-': return a - b;
             case '*': return a * b;
             case '/':
-                if (b == 0) {
-                    throw new UnsupportedOperationException("Cannot divide by zero");
-                }
-                else if (a == 0){
-                    throw new UnsupportedOperationException("Cannot divide by zero");
+                if (b == 0 || a == 0) {
+                    return 0;
                 }
                 return a / b;
+                case '%': return extendedOperations.modulo(((Double)a), ((Double)b));
         }
         return 0;
     }

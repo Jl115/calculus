@@ -8,21 +8,13 @@ package org.calculus.calculate;
 
 public class ExtendedOperations {
 
-    public static void main(String[] args) {
-        ExtendedOperations extendedOperations = new ExtendedOperations();
+    
 
-        // Beispielaufrufe
-        String moduloResult = extendedOperations.modulo(10, 3);
-        String potenzCalcResult = extendedOperations.potenzCalc(2, 3);
-        String squareRootResult = extendedOperations.squareRoot(9);
-        String factorialResult = extendedOperations.factorial(5);
-    }
-
-    public String modulo(int a, int b) {
+    public double modulo(Double a, Double b) {
         if (b == 0 || a == 0) {
-            return "0";
+            return 0;
         }
-        return String.valueOf(a % b);
+        return a % b ;
     }
 
     public String potenzCalc(double base, double exponent) {

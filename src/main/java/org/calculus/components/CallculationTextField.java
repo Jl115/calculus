@@ -2,11 +2,10 @@ package org.calculus.components;
 
 import javax.swing.JTextField;
 
-public class DisplayTextField extends JTextField {
+public class CallculationTextField extends JTextField{
+     private String value = "calculation";
 
-    private String value = "0.0";
-
-    public DisplayTextField() {
+    public CallculationTextField() {
         super(10); 
         this.setHorizontalAlignment(JTextField.RIGHT); // align text to the right
         this.setEditable(false);
@@ -14,7 +13,7 @@ public class DisplayTextField extends JTextField {
     }
 
     public void setValue(String value) {
-        if (this.value.equals("0.0")) {
+        if (this.value.equals("calculation")) {
         this.value = value;
         this.setText(value);
         this.repaint();
@@ -30,8 +29,8 @@ public class DisplayTextField extends JTextField {
     }
     public void clear() {
         System.out.println("Clear method called"); // Zum Debuggen
-        this.value = "0.0"; // Setzt den internen Wert
-        this.setText("0.0"); // Aktualisiert den Text im Textfeld
+        this.value = ""; // Setzt den internen Wert
+        this.setText(""); // Aktualisiert den Text im Textfeld
         this.repaint();
         this.revalidate();
     }
