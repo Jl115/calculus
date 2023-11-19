@@ -1,4 +1,6 @@
 package history;
+import org.calculus.Main;
+
 import java.util.ArrayList;
 
 
@@ -19,4 +21,11 @@ public class History {
     public ArrayList<String> getHistory() {
         return history;
     }
+    public String getValueOfHistory(int index) {
+        if (index >= 0 && index < history.size()) {
+            return history.get(index);
+        }
+        return null;
+    }
 }
+
