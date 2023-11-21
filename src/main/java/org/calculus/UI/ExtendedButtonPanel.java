@@ -1,36 +1,48 @@
 package org.calculus.UI;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import javax.swing.JPanel;
 import org.calculus.components.BaseSpezialButton;
 import org.calculus.components.DisplayTextField;
+
+import javax.swing.*;
+import java.awt.*;
 
 public class ExtendedButtonPanel extends JPanel {
     
     // Konstruktor akzeptiert nun eine DisplayTextField-Instanz
     public ExtendedButtonPanel(DisplayTextField displayTextField) {
         setLayout(new GridBagLayout());
+        setBackground(new java.awt.Color(19, 22, 27));
+
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(0, 0, 0, 0); // Ein Rand von 5 Pixeln um die Buttons
+        c.insets = new Insets(2, 2, 2, 2);
         c.weightx = 1.0;
         c.weighty = 1.0;
 
         // Array der speziellen Buttons, die zu diesem Panel hinzugefügt werden
         BaseSpezialButton[][] buttons = {
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField) },
+            { new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("sqrroot", displayTextField) },
+            { new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("log", displayTextField), new BaseSpezialButton("tan", displayTextField) },
+            { new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("N!", displayTextField), new BaseSpezialButton("1/x", displayTextField) },
+            { new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("X^2", displayTextField), new BaseSpezialButton("X^y", displayTextField) },
+            { new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("w", displayTextField), new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField) }
         };
 
         // Hinzufügen der Buttons zum Panel
         for (int row = 0; row < buttons.length; row++) {
             for (int col = 0; col < buttons[row].length; col++) {
+                buttons[row][col].setBackground(new java.awt.Color(41, 46, 55));
+                buttons[row][col].setForeground(Color.WHITE);
+
+                // Set specific size for buttons in the specified rows and columns
+                if (row == 4 || col == 3) {
+                    buttons[row][col].setPreferredSize(new Dimension(100, 50)); // Set desired size
+                } else {
+                    buttons[row][col].setPreferredSize(new Dimension(50, 50)); // Set default size
+                }
+
+                // Customize font
+                buttons[row][col].setFont(new Font("Arial", Font.PLAIN, 16));
                 c.gridx = col;
                 c.gridy = row;
                 add(buttons[row][col], c);
