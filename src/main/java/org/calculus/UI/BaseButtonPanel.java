@@ -1,10 +1,9 @@
 package org.calculus.UI;
 
-import java.awt.*;
-
-import javax.swing.JPanel;
-
 import org.calculus.components.BaseButton;
+
+import javax.swing.*;
+import java.awt.*;
 
 public class BaseButtonPanel extends JPanel {
 
@@ -16,12 +15,12 @@ public class BaseButtonPanel extends JPanel {
 
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(2, 2,2, 2);
+        c.insets = new Insets(2, 2, 2, 2);
         c.weightx = 1.0;
         c.weighty = 1.0;
 
         String[][] buttonLabels = {
-            {"AC", "C", "%", "÷"},
+            {"AC", "()", "%", "÷"},
             {"7", "8", "9", "x"},
             {"4", "5", "6", "-"},
             {"1", "2", "3", "+"},
