@@ -17,6 +17,8 @@ public class CallculatorPanel extends JPanel {
         displayTextField = new DisplayTextField();
         this.setBackground(new Color(0x13161B));
 
+        this.setBorder(BorderFactory.createEmptyBorder(7, 7, 7, 7));
+
         // setting the layout of the panel
         this.setLayout(new BorderLayout());
 
@@ -56,12 +58,13 @@ public class CallculatorPanel extends JPanel {
         JPanel displayPanel = new JPanel();
         displayPanel.setLayout(new BoxLayout(displayPanel, BoxLayout.Y_AXIS));
         displayPanel.setBackground(new Color(19, 22, 27));
+        displayPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         displayTextField.setPreferredSize(new Dimension(400, 90));
         displayTextField.setEditable(false);
         displayPanel.add(displayTextField);
 
         // Add some vertical spacing between DisplayTextField and CalculationField
-        displayPanel.add(Box.createVerticalStrut(2));
+        displayPanel.add(Box.createVerticalStrut(4));
 
         // Create a textfield for the calculation
         JTextField calculationField = new JTextField("Calculation");
