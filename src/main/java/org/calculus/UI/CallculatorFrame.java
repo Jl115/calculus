@@ -19,6 +19,7 @@ public class CallculatorFrame extends JFrame {
 
         this.add(panel, BorderLayout.CENTER);
         this.pack();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 }
