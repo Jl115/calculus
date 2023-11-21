@@ -15,10 +15,9 @@ public class HistoryFrame extends JFrame {
         // Set the preferred size before packing
         setPreferredSize(new Dimension(335, 567));
 
-        // Pack the frame to fit its contents
-        pack();
 
-        // Ensure the frame is visible
+        pack();
+        this.setLocationRelativeTo(null);
         setVisible(true);
     }
 }
