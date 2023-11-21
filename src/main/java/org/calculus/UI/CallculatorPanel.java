@@ -25,14 +25,13 @@ public class CallculatorPanel extends JPanel {
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBackground(new Color(19, 22, 27));
 
-        // Adding some vertical spacing between 
-        topPanel.add(Box.createVerticalStrut(5));
-
         // Create a panel for centering the "History" button
         JPanel centeringPanel = new JPanel();
         centeringPanel.setLayout(new BoxLayout(centeringPanel, BoxLayout.X_AXIS));
+        centeringPanel.setBackground(new Color(19, 22, 27));
         Component verticalGlue = Box.createVerticalGlue();
         centeringPanel.add(verticalGlue);
+        centeringPanel.add(Box.createVerticalStrut(50));
 
         // Add the "History" button to the centering panel
         JButton historyButton = new JButton("History");
@@ -47,6 +46,9 @@ public class CallculatorPanel extends JPanel {
                 historyFrame.setVisible(true);
             }
         });
+
+        // Add more horizontal glue to keep the button centered
+        centeringPanel.add(Box.createHorizontalGlue());
 
         // Add the centering panel to the top panel
         topPanel.add(centeringPanel);
