@@ -47,11 +47,11 @@ public class HistoryPanel extends JPanel {
         closeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         closeButton.setMaximumSize(new Dimension(500, 40));
         closeButton.setPreferredSize(new Dimension(500, 40));
-        contentPanel.add(Box.createRigidArea(new Dimension(0, 30)));
+        closeButton.setBackground(new Color(80, 64, 153));
+        closeButton.setForeground(Color.WHITE);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Find the parent JFrame and close it
                 Window parentWindow = SwingUtilities.windowForComponent(HistoryPanel.this);
                 if (parentWindow instanceof JFrame) {
                     ((JFrame) parentWindow).dispose();
