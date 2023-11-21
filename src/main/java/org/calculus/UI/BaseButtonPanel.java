@@ -5,8 +5,6 @@ import org.calculus.components.DisplayTextField;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.image.BufferedImage;
 
 public class BaseButtonPanel extends JPanel {
     private DisplayTextField displayTextField;
@@ -63,25 +61,5 @@ public class BaseButtonPanel extends JPanel {
         }
 
         setVisible(true);
-    }
-
-    private BufferedImage createRoundButtonImage(int size, Color bgColor, Color textColor, String text) {
-        BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = image.createGraphics();
-
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2.setColor(bgColor);
-        g2.fill(new Ellipse2D.Double(0, 0, size - 1, size - 1));
-
-        g2.setColor(textColor);
-        g2.setFont(new Font("Arial", Font.PLAIN, size / 3));
-        FontMetrics metrics = g2.getFontMetrics();
-        int x = (size - metrics.stringWidth(text)) / 2;
-        int y = ((size - metrics.getHeight()) / 2) + metrics.getAscent();
-        g2.drawString(text, x, y);
-
-        g2.dispose();
-        return image;
     }
 }
