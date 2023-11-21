@@ -56,6 +56,7 @@ public class CallculatorPanel extends JPanel {
         displayPanel.setLayout(new BoxLayout(displayPanel, BoxLayout.Y_AXIS));
         displayPanel.setBackground(new Color(19, 22, 27));
         displayTextField.setPreferredSize(new Dimension(400, 90));
+        displayTextField.setEditable(false);
         displayPanel.add(displayTextField);
 
         // Add some vertical spacing between DisplayTextField and CalculationField
@@ -65,6 +66,7 @@ public class CallculatorPanel extends JPanel {
         JTextField calculationField = new JTextField("Calculation");
         calculationField.setHorizontalAlignment(JTextField.RIGHT);
         calculationField.setPreferredSize(new Dimension(400, 50));
+        calculationField.setEditable(false);
         displayPanel.add(calculationField);
 
         // Create a panel for the Delete button
