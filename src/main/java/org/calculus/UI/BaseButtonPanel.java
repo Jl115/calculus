@@ -1,15 +1,20 @@
 package org.calculus.UI;
 
 import org.calculus.components.BaseButton;
+import org.calculus.components.DisplayTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BaseButtonPanel extends JPanel {
-
+    private DisplayTextField displayTextField;
     private BaseButton[] buttons = new BaseButton[10];
 
-    public BaseButtonPanel() {
+    public BaseButtonPanel(DisplayTextField displayTextField) {
+        this.displayTextField = displayTextField;
+
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
 
@@ -40,6 +45,13 @@ public class BaseButtonPanel extends JPanel {
                 }
                 if (label.equals("AC")) {
                     button.setBackground(new java.awt.Color(80, 64, 153));
+                    // Add action listener to the "AC" button to clear the displayTextField
+                    button.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            displayTextField.setValue(""); // Clear the text field
+                        }
+                    });
                 }
 
                 // Set specific size for buttons in the specified rows and columns

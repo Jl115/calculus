@@ -103,7 +103,7 @@ public class CallculatorPanel extends JPanel {
         // adding extended buttons to the panel
         this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
         // adding the BaseButtonPanel to the panel
-        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel();
+        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField);
         this.add(BaseButtonPanel, BorderLayout.EAST);
     }
 }
