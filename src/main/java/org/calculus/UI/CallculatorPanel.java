@@ -15,7 +15,7 @@ public class CallculatorPanel extends JPanel {
 
     public CallculatorPanel() {
         displayTextField = new DisplayTextField();
-        this.setBackground(new Color(0x13161B)); // Hex color #13161B
+        this.setBackground(new Color(0x13161B));
 
         // setting the layout of the panel
         this.setLayout(new BorderLayout());
@@ -41,7 +41,6 @@ public class CallculatorPanel extends JPanel {
         historyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Create and display the HistoryFrame when the historyButton is clicked
                 HistoryFrame historyFrame = new HistoryFrame();
                 historyFrame.setVisible(true);
             }
@@ -102,6 +101,7 @@ public class CallculatorPanel extends JPanel {
 
         // adding extended buttons to the panel
         this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
+
         // adding the BaseButtonPanel to the panel
         BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField);
         this.add(BaseButtonPanel, BorderLayout.EAST);

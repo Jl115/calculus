@@ -5,8 +5,8 @@ import org.calculus.components.DisplayTextField;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
 
 public class BaseButtonPanel extends JPanel {
     private DisplayTextField displayTextField;
@@ -35,9 +35,9 @@ public class BaseButtonPanel extends JPanel {
         for (int row = 0; row < buttonLabels.length; row++) {
             for (int col = 0; col < buttonLabels[row].length; col++) {
                 String label = buttonLabels[row][col];
+
                 BaseButton button = new BaseButton(label);
-                button.setBackground(new java.awt.Color(41, 46, 55));
-                button.setForeground(Color.WHITE);
+                button.setIcon(new ImageIcon(createRoundButtonImage(50, new Color(41, 46, 55), Color.WHITE, label)));
 
                 // Set specific buttons to specific colour
                 if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
@@ -45,24 +45,15 @@ public class BaseButtonPanel extends JPanel {
                 }
                 if (label.equals("AC")) {
                     button.setBackground(new java.awt.Color(80, 64, 153));
-                    // Add action listener to the "AC" button to clear the displayTextField
-                    button.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            displayTextField.setValue(""); // Clear the text field
-                        }
-                    });
+                    button.addActionListener(e -> displayTextField.setValue(""));
                 }
 
                 // Set specific size for buttons in the specified rows and columns
                 if (row == 4 || col == 3) {
-                    button.setPreferredSize(new Dimension(100, 50)); // Set desired size
+                    button.setPreferredSize(new Dimension(100, 50));
                 } else {
-                    button.setPreferredSize(new Dimension(50, 50)); // Set default size
+                    button.setPreferredSize(new Dimension(50, 50));
                 }
-
-                // Customize font
-                button.setFont(new Font("Arial", Font.PLAIN, 16));
 
                 c.gridx = col;
                 c.gridy = row;
@@ -71,5 +62,25 @@ public class BaseButtonPanel extends JPanel {
         }
 
         setVisible(true);
+    }
+
+    private BufferedImage createRoundButtonImage(int size, Color bgColor, Color textColor, String text) {
+        BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = image.createGraphics();
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        g2.setColor(bgColor);
+        g2.fill(new Ellipse2D.Double(0, 0, size - 1, size - 1));
+
+        g2.setColor(textColor);
+        g2.setFont(new Font("Arial", Font.PLAIN, size / 3));
+        FontMetrics metrics = g2.getFontMetrics();
+        int x = (size - metrics.stringWidth(text)) / 2;
+        int y = ((size - metrics.getHeight()) / 2) + metrics.getAscent();
+        g2.drawString(text, x, y);
+
+        g2.dispose();
+        return image;
     }
 }
