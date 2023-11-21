@@ -37,7 +37,8 @@ public class BaseButtonPanel extends JPanel {
                 String label = buttonLabels[row][col];
 
                 BaseButton button = new BaseButton(label);
-                button.setIcon(new ImageIcon(createRoundButtonImage(50, new Color(41, 46, 55), Color.WHITE, label)));
+                button.setBackground(new java.awt.Color(41, 46, 55));
+                button.setForeground(Color.WHITE);
 
                 // Set specific buttons to specific colour
                 if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
