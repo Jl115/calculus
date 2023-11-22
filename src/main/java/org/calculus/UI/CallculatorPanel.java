@@ -72,6 +72,25 @@ public class CallculatorPanel extends JPanel {
                 historyFrame.setVisible(true);
             }
         });
+        // Hover and click effect
+        historyButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                historyButton.setBackground(new Color(169, 212, 245)); // Change color on hover
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                historyButton.setBackground(new Color(63, 140, 255)); // Restore original color
+            }
+
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                historyButton.setBackground(new Color(40, 100, 200)); // Change color on click
+            }
+
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                historyButton.setBackground(new Color(169, 212, 245)); // Restore color after click
+            }
+        });
+
         historyButton.setFocusPainted(false);
         historyButton.setBorderPainted(false);
         historyButton.setContentAreaFilled(false);
@@ -141,6 +160,25 @@ public class CallculatorPanel extends JPanel {
             if (!currentText.isEmpty()) {
                 String updatedText = currentText.substring(0, currentText.length() - 1);
                 displayTextField.setText(updatedText);
+            }
+        });
+
+        // Hover and click effect
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteButton.setBackground(new Color(191, 159, 205)); // Change color on hover
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteButton.setBackground(new Color(151, 78, 195)); // Restore original color
+            }
+
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deleteButton.setBackground(new Color(120, 50, 150)); // Change color on click
+            }
+
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                deleteButton.setBackground(new Color(191, 159, 205)); // Restore color after click
             }
         });
         deleteButton.setFocusPainted(false);
