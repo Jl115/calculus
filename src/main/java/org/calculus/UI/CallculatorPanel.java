@@ -35,9 +35,34 @@ public class CallculatorPanel extends JPanel {
         centeringPanel.add(verticalGlue);
         centeringPanel.add(Box.createVerticalStrut(50));
 
-        // Add the "History" button to the centering panel
-        JButton historyButton = new JButton("History");
-        centeringPanel.add(historyButton);
+        JButton historyButton = new JButton("History") {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                g2.setColor(getBackground());
+                g2.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
+
+                g2.setColor(getForeground());
+                g2.setFont(new Font("Arial", Font.BOLD, 14));
+                FontMetrics metrics = g2.getFontMetrics();
+                int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                g2.drawString(getText(), x, y);
+
+                g2.dispose();
+            }
+
+            @Override
+            protected void paintBorder(Graphics g) {
+                // Do not paint a border
+            }
+        };
+        historyButton.setPreferredSize(new Dimension(100, 30));
+        historyButton.setBackground(new Color(63, 140, 255));
+        historyButton.setForeground(Color.WHITE);
+        historyButton.setFont(new Font("Arial", Font.BOLD, 14));
 
         // ActionListener for the historyButton
         historyButton.addActionListener(new ActionListener() {
@@ -47,6 +72,11 @@ public class CallculatorPanel extends JPanel {
                 historyFrame.setVisible(true);
             }
         });
+        historyButton.setFocusPainted(false);
+        historyButton.setBorderPainted(false);
+        historyButton.setContentAreaFilled(false);
+
+        centeringPanel.add(historyButton);
 
         // Add more horizontal glue to keep the button centered
         centeringPanel.add(Box.createHorizontalGlue());
@@ -76,8 +106,36 @@ public class CallculatorPanel extends JPanel {
         // Create a panel for the Delete button
         JPanel deleteButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         deleteButtonPanel.setBackground(new Color(19, 22, 27));
-        JButton deleteButton = new JButton("Delete");
+
+        // Create the rounded Delete Button
+        JButton deleteButton = new JButton("Delete") {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                g2.setColor(getBackground());
+                g2.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
+
+                g2.setColor(getForeground());
+                g2.setFont(new Font("Arial", Font.PLAIN, 14));
+                FontMetrics metrics = g2.getFontMetrics();
+                int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                g2.drawString(getText(), x, y);
+
+                g2.dispose();
+            }
+
+            @Override
+            protected void paintBorder(Graphics g) {
+            }
+        };
         deleteButton.setPreferredSize(new Dimension(80, 30));
+        deleteButton.setBackground(new Color(151, 78, 195));
+        deleteButton.setForeground(Color.WHITE);
+        deleteButton.setFont(new Font("Arial", Font.PLAIN, 14));
+
         deleteButton.addActionListener(e -> {
             String currentText = displayTextField.getText();
             if (!currentText.isEmpty()) {
@@ -85,6 +143,10 @@ public class CallculatorPanel extends JPanel {
                 displayTextField.setText(updatedText);
             }
         });
+        deleteButton.setFocusPainted(false);
+        deleteButton.setBorderPainted(false);
+        deleteButton.setContentAreaFilled(false);
+
         deleteButtonPanel.add(deleteButton);
 
         // Adding some vertical spacing between CalculationField and DeleteButton
