@@ -1,8 +1,7 @@
 package org.calculus.UI;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 
 
@@ -11,21 +10,16 @@ public class CallculatorFrame extends JFrame {
     public CallculatorFrame() {
         CallculatorPanel panel = new CallculatorPanel();
 
-
-        // adding components to the frame and setting the frame's properties
-        this.setTitle("Callculator");
+        this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.setPreferredSize(new Dimension(800, 500 ));
+        this.setPreferredSize(new Dimension(950, 600 ));
         this.setMinimumSize(new Dimension(600, 300 ));
         this.setMaximumSize(new Dimension(1000, 700 ));
 
-        this.setPreferredSize(new Dimension(800, 500));
-        this.setMinimumSize(new Dimension(600, 300));
-        this.setMaximumSize(new Dimension(1000, 700));
-
         this.add(panel, BorderLayout.CENTER);
         this.pack();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 }
