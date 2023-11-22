@@ -8,8 +8,10 @@ public class DisplayTextField extends JTextField {
 
     public DisplayTextField() {
         super(10); 
-        this.setHorizontalAlignment(JTextField.RIGHT); // align text to the right
+
         this.setEditable(false);
+        this.setHorizontalAlignment(JTextField.RIGHT);
+
         setValue(value);
     }
 
