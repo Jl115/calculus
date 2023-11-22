@@ -31,8 +31,26 @@ public class ExtendedButtonPanel extends JPanel {
         // Hinzufügen der Buttons zum Panel
         for (int row = 0; row < buttons.length; row++) {
             for (int col = 0; col < buttons[row].length; col++) {
-                buttons[row][col].setBackground(new java.awt.Color(41, 46, 55));
-                buttons[row][col].setForeground(Color.WHITE);
+                BaseSpezialButton button = buttons[row][col];
+                String label = button.getLabel();
+
+                button.addMouseListener(new java.awt.event.MouseAdapter() {
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(90, 90, 90)); // Default hover color for other buttons
+                    }
+
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(41, 46, 55)); // Restore original color
+                    }
+
+                    public void mousePressed(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(30, 30, 30)); // General color for press
+                    }
+
+                    public void mouseReleased(java.awt.event.MouseEvent evt) {
+                            button.setBackground(new Color(90, 90, 90)); // Restore to hover color
+                    }
+                });
 
                 // Set specific size for buttons in the specified rows and columns
                 if (row == 4 || col == 3) {

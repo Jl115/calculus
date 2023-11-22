@@ -38,6 +38,48 @@ public class BaseButtonPanel extends JPanel {
                 button.setBackground(new java.awt.Color(41, 46, 55));
                 button.setForeground(Color.WHITE);
 
+                // Hover and click effect
+                button.addMouseListener(new java.awt.event.MouseAdapter() {
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
+                            button.setBackground(new Color(191, 159, 205)); // Change color on hover for specific buttons
+                        } else if (label.equals("AC")) {
+                            button.setBackground(new Color(137, 114, 229)); // Different hover color for "AC" button
+                        } else {
+                            button.setBackground(new Color(90, 90, 90)); // Default hover color for other buttons
+                        }
+                    }
+
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
+                            button.setBackground(new Color(151, 78, 195)); // Specific color for certain buttons
+                        } else if (label.equals("AC")) {
+                            button.setBackground(new Color(80, 64, 153)); // Specific color for "AC" button
+                        } else {
+                            button.setBackground(new Color(41, 46, 55)); // Restore original color
+                        }
+                    }
+
+                    public void mousePressed(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(30, 30, 30)); // General color for press
+                        if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
+                            button.setBackground(new Color(74, 35, 97)); // Specific color for certain buttons
+                        } else if (label.equals("AC")) {
+                            button.setBackground(new Color(61, 54, 131)); // Specific color for "AC" button
+                        }
+                    }
+
+                    public void mouseReleased(java.awt.event.MouseEvent evt) {
+                        if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
+                            button.setBackground(new Color(191, 159, 205)); // Restore to hover color
+                        } else if (label.equals("AC")) {
+                            button.setBackground(new Color(137, 114, 229)); // Restore to hover color
+                        } else {
+                            button.setBackground(new Color(90, 90, 90)); // Restore to hover color
+                        }
+                    }
+                });
+
                 // Set specific buttons to specific colour
                 if (label.equals("x") || label.equals("÷") || label.equals("-") || label.equals("+") || label.equals("=")) {
                     button.setBackground(new java.awt.Color(151, 78, 195));
