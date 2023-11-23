@@ -53,8 +53,8 @@ public class BaseButton extends JButton implements ActionListener {
             this.value = "AC";
         } else if ("+/-".equalsIgnoreCase(getText())) {
             displayTextField.clear();
-        } else if ("mod".equalsIgnoreCase(getText())) {
-            this.value = "mod";
+        } else if ("%".equalsIgnoreCase(getText())) {
+            this.value = "%";
         } else if ("*".equalsIgnoreCase(getText())) {
             this.value = "*";
         } else if ("-".equalsIgnoreCase(getText())) {
@@ -111,5 +111,4 @@ public class BaseButton extends JButton implements ActionListener {
             displayTextField.setValue(this.value.toString());
         }
     }
-
 }

@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="calculus:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="adding new rules and fixing the bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/calculus_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/BaseButtonPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/UI/BaseButtonPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CalculatorUi.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CalculatorUi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CallculatorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CallculatorFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CallculatorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/UI/CallculatorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/ExtendedButtonPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/UI/ExtendedButtonPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/HistoryFields.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/HistoryWindow.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/UI/HistoryWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/components/BaseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/components/BaseButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/components/CallculationTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/components/CallculationTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/components/DisplayTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/components/DisplayTextField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +41,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YPHt2st4kI3HPzweGOB3IAscn2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,9 +54,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev-merge-branch",
     "last_opened_file_path": "/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -72,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700420505341</updated>
       <workItem from="1700420506385" duration="190000" />
+      <workItem from="1700686745871" duration="1109000" />
     </task>
     <servers />
   </component>

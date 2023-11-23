@@ -30,6 +30,12 @@ public class DisplayTextField extends JTextField {
         }
         
     }
+    public void setUpdatedValue(String value) {
+        this.value = String.valueOf(value);
+        this.setText(this.value);
+        this.repaint();
+        this.revalidate();
+    }
     public void clear() {
         System.out.println("Clear method called"); // Zum Debuggen
         this.value = "0.0"; // Setzt den internen Wert

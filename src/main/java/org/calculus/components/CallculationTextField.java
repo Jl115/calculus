@@ -37,6 +37,7 @@ public class CallculationTextField extends JTextField{
     
 
     public String getValue() {
+        System.out.println("getValue method called"); // Zum Debuggen
         return value;
     }
 }

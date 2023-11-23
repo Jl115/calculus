@@ -9,12 +9,10 @@ import java.awt.*;
 
 
 public class BaseButtonPanel extends JPanel {
-    private DisplayTextField displayTextField;
-    private CallculationTextField callculationTextField;
-    private BaseButton[] buttons = new BaseButton[10];
 
-    public BaseButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField2) {
-        this.displayTextField = displayTextField;
+
+    public BaseButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField) {
+
 
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));

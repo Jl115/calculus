@@ -17,6 +17,7 @@ public class ExtendedButtonPanel extends JPanel {
     public ExtendedButtonPanel(DisplayTextField displayTextField) {
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
+        setPreferredSize(new Dimension(300, 100));
 
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
@@ -27,15 +28,17 @@ public class ExtendedButtonPanel extends JPanel {
 
 
         BaseSpezialButton[][] buttons = {
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("G", displayTextField),},
-            {new BaseSpezialButton("(", displayTextField), new BaseSpezialButton(")", displayTextField)}
+            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("G", displayTextField), new BaseSpezialButton("(", displayTextField), new BaseSpezialButton(")", displayTextField)},
+
+            
+            // {new BaseSpezialButton("sin", displayTextField), new BaseSpezialButton("cos", displayTextField), new BaseSpezialButton("tan", displayTextField), new BaseSpezialButton("log", displayTextField)},
             
         };
 
         for (int row = 0; row < buttons.length; row++) {
             for (int col = 0; col < buttons[row].length; col++) {
                 BaseSpezialButton button = buttons[row][col];
-                String label = button.getLabel();
+                String label = button.getText();
 
                 button.addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mouseEntered(java.awt.event.MouseEvent evt) {
