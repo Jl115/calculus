@@ -10,6 +10,8 @@ public class BaseSpezialButton extends JButton implements ActionListener {
     private Double specialValue = 0.0;
     private DisplayTextField displayTextField;
 
+    private int fontSize = 18;
+
     public BaseSpezialButton(String name, DisplayTextField displayTextField) {
         super(name);
         this.displayTextField = displayTextField;
@@ -18,6 +20,12 @@ public class BaseSpezialButton extends JButton implements ActionListener {
 
         // Setzen des speziellen Werts basierend auf dem Namen des Buttons
         setSpecialValue(null); // Dies wird in setSpecialValue abgefangen
+    }
+
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
+        setFont(new Font("Arial", Font.PLAIN, fontSize));
+        repaint();
     }
 
     private void setButtonProperties() {
@@ -52,7 +60,7 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         g2.fill(new RoundRectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1, 15, 15));
 
         g2.setColor(getForeground());
-        g2.setFont(getFont());
+        g2.setFont(new Font("Arial", Font.PLAIN, fontSize));
         FontMetrics metrics = g2.getFontMetrics();
         int x = (getWidth() - metrics.stringWidth(getText())) / 2;
         int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();

@@ -12,6 +12,7 @@ public class CallculatorPanel extends JPanel {
 
     // This will be references in ExtendedButtonPanel
     private DisplayTextField displayTextField;
+    private CallculatorPanel calculationField;
 
     public CallculatorPanel() {
         displayTextField = new DisplayTextField();
@@ -110,6 +111,9 @@ public class CallculatorPanel extends JPanel {
         displayPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         displayTextField.setPreferredSize(new Dimension(400, 90));
         displayTextField.setEditable(false);
+        Font font = new Font("Arial", Font.BOLD, 38);
+        displayTextField.setForeground((new Color(41, 38, 38)));
+        displayTextField.setFont(font);
         displayPanel.add(displayTextField);
 
         // Add some vertical spacing between DisplayTextField and CalculationField
@@ -120,6 +124,9 @@ public class CallculatorPanel extends JPanel {
         calculationField.setHorizontalAlignment(JTextField.RIGHT);
         calculationField.setPreferredSize(new Dimension(400, 50));
         calculationField.setEditable(false);
+        font = new Font("Arial", Font.PLAIN, 18);
+        calculationField.setForeground((new Color(41, 38, 38)));
+        calculationField.setFont(font);
         displayPanel.add(calculationField);
 
         // Create a panel for the Delete button
@@ -206,7 +213,7 @@ public class CallculatorPanel extends JPanel {
         this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
 
         // adding the BaseButtonPanel to the panel
-        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField);
+        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField, calculationField);
         this.add(BaseButtonPanel, BorderLayout.EAST);
     }
 }

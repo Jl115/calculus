@@ -7,12 +7,24 @@ import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 
 public class BaseButton extends JButton implements ActionListener {
+    private int fontSize;
+
     public BaseButton(String name) {
+        this(name, 20);
+    }
+
+    public BaseButton(String name, int fontSize) {
+        this.fontSize = fontSize;
         this.setText(name);
         this.setContentAreaFilled(false);
         this.setFocusPainted(false);
         this.addActionListener(this);
         this.setVisible(true);
+    }
+
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
+        repaint();
     }
 
     @Override
@@ -24,7 +36,7 @@ public class BaseButton extends JButton implements ActionListener {
         g2.fill(new RoundRectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1, 15, 15));
 
         g2.setColor(getForeground());
-        g2.setFont(new Font("Arial", Font.PLAIN, 16));
+        g2.setFont(new Font("Arial", Font.PLAIN, fontSize));
         FontMetrics metrics = g2.getFontMetrics();
         int x = (getWidth() - metrics.stringWidth(getText())) / 2;
         int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
@@ -35,7 +47,6 @@ public class BaseButton extends JButton implements ActionListener {
 
     @Override
     protected void paintBorder(Graphics g) {
-        // Do not paint a border
     }
 
     @Override
@@ -43,3 +54,4 @@ public class BaseButton extends JButton implements ActionListener {
         System.out.println(this.getText());
     }
 }
+

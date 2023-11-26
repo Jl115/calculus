@@ -8,10 +8,12 @@ import java.awt.*;
 
 public class BaseButtonPanel extends JPanel {
     private DisplayTextField displayTextField;
+    private JTextField calculationField;
     private BaseButton[] buttons = new BaseButton[10];
 
-    public BaseButtonPanel(DisplayTextField displayTextField) {
+    public BaseButtonPanel(DisplayTextField displayTextField, JTextField calculationField) {
         this.displayTextField = displayTextField;
+        this.calculationField = calculationField;
 
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
@@ -87,7 +89,20 @@ public class BaseButtonPanel extends JPanel {
                 if (label.equals("AC")) {
                     button.setBackground(new java.awt.Color(80, 64, 153));
                     button.addActionListener(e -> displayTextField.setValue(""));
+                    button.addActionListener(e -> calculationField.setText(""));
                 }
+
+                button.addActionListener(e -> {
+                    if (button.getText().equals("=")) {
+                        String displayText = displayTextField.getText();
+
+                        if (getParent() instanceof HistoryFrame) {
+                            HistoryFrame historyFrame = (HistoryFrame) getParent();
+                            HistoryPanel historyPanel = historyFrame.getHistoryPanel();
+                            historyPanel.shiftAndSet(displayText);
+                        }
+                    }
+                });
 
                 // Set specific size for buttons in the specified rows and columns
                 if (row == 4 || col == 3) {
