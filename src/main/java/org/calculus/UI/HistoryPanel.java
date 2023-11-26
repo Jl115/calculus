@@ -1,13 +1,20 @@
 package org.calculus.UI;
 
+import org.calculus.components.DisplayTextField;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class HistoryPanel extends JPanel {
 
-    public HistoryPanel() {
+    private DisplayTextField displayTextField;
+
+    public HistoryPanel(DisplayTextField displayTextField) {
+        this.displayTextField = displayTextField;
         setLayout(new BorderLayout());
         setBackground(new Color(19, 22, 27));
 
@@ -34,6 +41,7 @@ public class HistoryPanel extends JPanel {
                     super.paintComponent(g);
                 }
             };
+            textField.setText(displayTextField.getText());
             textField.setPreferredSize(new Dimension(200, 30));
             textField.setEditable(false);
             textField.setOpaque(false);
@@ -107,5 +115,31 @@ public class HistoryPanel extends JPanel {
 
         // Add the content panel to the HistoryPanel
         add(contentPanel, BorderLayout.CENTER);
+    }
+
+    public void shiftAndSet(String newText) {
+        // Retrieve all text fields previously created
+        Component[] components = getComponents();
+        JTextField[] textFields = new JTextField[components.length];
+
+        int index = 0;
+        for (Component comp : components) {
+            if (comp instanceof JTextField) {
+                textFields[index] = (JTextField) comp;
+                index++;
+            }
+        }
+
+        // Shift content in text fields downward
+        for (int i = textFields.length - 1; i > 0; i--) {
+            if (textFields[i - 1] != null) {
+                textFields[i].setText(textFields[i - 1].getText());
+            }
+        }
+
+        // Set the new text in the first field
+        if (textFields.length > 0) {
+            textFields[0].setText(newText);
+        }
     }
 }
