@@ -29,6 +29,8 @@
 **möchte ich** eine temporäre Historie meiner Berechnungen haben,  
 **damit** ich meine letzten Aktionen nachverfolgen kann, bevor ich den Taschenrechner ausschalte.
 
+---
+
 
 # - Neue Userstorys 11.11.2023
 ## User Stories
@@ -60,3 +62,24 @@
 
 #### Anzeige im technischen Format
 - **Als Nutzer** möchte ich die Option haben, Ergebnisse im technischen Format (z.B. 1.5 E+3) anzuzeigen, um mit grossen Zahlen einfacher arbeiten zu können.
+
+--- 
+
+# - Neue Userstorys vom 23.11.2023
+
+### Berechnung der Nullstellen einer quadratischen Funktion:**
+   - Als Benutzer möchte ich die Nullstellen einer quadratischen Funktion (ax² + bx + c = 0) berechnen können, um meine mathematischen Kenntnisse zu erweitern und praktische Probleme in meinem Alltag oder meiner Arbeit zu lösen.
+
+### Berechnung der Oberfläche und des Volumens einer Kugel:**
+   - **Als Benutzer** möchte ich das Volumen und die Oberfläche einer Kugel berechnen können, um ein tieferes Verständnis für geometrische Formen zu entwickeln und diese Kenntnisse in verschiedenen Kontexten anzuwenden.
+
+### Berechnung eines Kegels:**
+   - Als **Benutzer** möchte ich die Oberfläche und das Volumen eines Kegels berechnen können, um besser zu verstehen, wie diese Masse in realen Objekten und Situationen angewendet werden können.
+
+### Berechnung eines Zylinders:**
+   - Als **Benutzer** möchte ich die Oberfläche und das Volumen eines Zylinders berechnen können, um meine Fähigkeiten in der räumlichen Wahrnehmung und beim praktischen Umgang mit geometrischen Formen zu verbessern.
+
+### Berechnung einer Pyramide:**
+   - Als **Benutzer** möchte ich die Oberfläche und das Volumen einer Pyramide berechnen können, um mein Wissen über antike Architektur und geometrische Konzepte zu vertiefen.
+
+
