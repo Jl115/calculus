@@ -115,6 +115,8 @@
     - Akzeptanzkriterium: Das Design ermöglicht die Eingabe von zwei oder mehr Zahlen und zeigt klar gekennzeichnete Schaltflächen für jede Grundoperation.
       
     - Akzeptanzkriterium: Die Historie ist klar im User Interface sichtbar und zeigt die letzten durchgeführten Berechnungen in einer chronologischen Liste an.
+ 
+---
 
 - # Neue Tasks für Sprint 2
 - ## 11.11.2023
