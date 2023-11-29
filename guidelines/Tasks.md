@@ -218,7 +218,7 @@
 - Einstellbare Nachkommastellen im GUI.
 - Korrekte Anwendung der Einstellung auf die Ergebnisanzeige.
 
-## Task 9: Implementierung der Anzeige im technischen Format
+## Task 10: Implementierung der Anzeige im technischen Format
 ### Teilaufgaben
 1. **GUI-Option:** Füge eine Option für die Anzeige im technischen Format hinzu.
 2. **Formatierungslogik:** Implementiere die Logik zur Darstellung der Ergebnisse im technischen Format.
@@ -227,3 +227,61 @@
 - Option zur Anzeige im technischen Format vorhanden.
 - Korrekte und klare Darstellung im gewählten Format.
 
+---
+- # Neue Tasks vom 23.11.2023
+
+### Aufgabe 1: Implementierung der Berechnung der Nullstellen einer quadratischen Funktion
+#### Teilaufgaben
+1. **Eingabeoptionen:** Entwickle ein Eingabefeld, um die Koeffizienten a, b, und c einer quadratischen Funktion einzugeben.
+2. **Berechnungslogik:** Implementiere die mathematische Logik, um die Nullstellen der quadratischen Gleichung (ax² + bx + c = 0) zu berechnen.
+3. **Ergebnisanzeige:** Zeige die berechneten Nullstellen in einer klaren und verständlichen Form an.
+
+#### Akzeptanzkriterien
+- Eingabemöglichkeit für die Koeffizienten a, b, und c.
+- Korrekte Berechnung und Anzeige der Nullstellen.
+- Behandlung von Sonderfällen wie a=0 oder negative Diskriminante.
+- Klare und verständliche Ergebnisanzeige.
+
+### Aufgabe 2: Implementierung der Berechnungen an der Kugel
+#### Teilaufgaben
+1. **Eingabeoptionen:** Entwickle Eingabefelder für den Radius einer Kugel.
+2. **Berechnungslogik:** Implementiere die mathematische Logik zur Berechnung der Oberfläche und des Volumens einer Kugel.
+3. **Ergebnisanzeige:** Zeige die berechnete Oberfläche und das Volumen in einer verständlichen Form an.
+
+#### Akzeptanzkriterien
+- Eingabemöglichkeit für den Radius der Kugel.
+- Korrekte Berechnung von Oberfläche und Volumen.
+- Klare und verständliche Ergebnisanzeige.
+
+### Aufgabe 3: Implementierung der Berechnung eines Kegels
+#### Teilaufgaben
+1. **Eingabeoptionen:** Implementiere Eingabefelder für Radius und Höhe eines Kegels.
+2. **Berechnungslogik:** Entwickle die Logik zur Berechnung von Oberfläche und Volumen des Kegels.
+3. **Ergebnisanzeige:** Stelle die berechneten Werte klar und verständlich dar.
+
+#### Akzeptanzkriterien
+- Eingabemöglichkeit für Radius und Höhe des Kegels.
+- Korrekte Berechnung von Oberfläche und Volumen.
+- Klare und verständliche Ergebnisanzeige.
+
+### Aufgabe 4: Implementierung der Berechnung eines Zylinders
+#### Teilaufgaben
+1. **Eingabeoptionen:** Entwickle Eingabefelder für Radius und Höhe eines Zylinders.
+2. **Berechnungslogik:** Implementiere die mathematische Logik zur Berechnung der Oberfläche und des Volumens eines Zylinders.
+3. **Ergebnisanzeige:** Zeige die berechneten Werte in einer klar verständlichen Form an.
+
+#### Akzeptanzkriterien
+- Eingabemöglichkeit für Radius und Höhe des Zylinders.
+- Korrekte Berechnung von Oberfläche und Volumen.
+- Klare und verständliche Ergebnisanzeige.
+
+### Aufgabe 5: Implementierung der Berechnung einer Pyramide
+#### Teilaufgaben
+1. **Eingabeoptionen:** Implementiere Eingabefelder für die relevanten Maße einer Pyramide (z.B. Grundfläche, Höhe).
+2. **Berechnungslogik:** Entwickle die Logik zur Berechnung von Oberfläche und Volumen einer Pyramide.
+3. **Ergebnisanzeige:** Zeige die berechneten Werte in einer klar verständlichen Form an.
+
+#### Akzeptanzkriterien
+- Eingabemöglichkeit für relevante Maße einer Pyramide.
+- Korrekte Berechnung von Oberfläche und Volumen.
+- Klare und verständliche Ergebnisanzeige.
