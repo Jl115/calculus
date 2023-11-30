@@ -29,7 +29,7 @@ public class BaseButtonPanel extends JPanel {
             {"7", "8", "9", "x"},
             {"4", "5", "6", "-"},
             {"1", "2", "3", "+"},
-            {"+/-", "0", ".", "="}
+            {"0", ".", "="}
         };
 
         for (int row = 0; row < buttonLabels.length; row++) {
@@ -105,10 +105,13 @@ public class BaseButtonPanel extends JPanel {
                 });
 
                 // Set specific size for buttons in the specified rows and columns
-                if (row == 4 || col == 3) {
-                    button.setPreferredSize(new Dimension(100, 50));
+                if (label.equals("0")) {
+                    c.gridwidth = 2; // Span two columns for "0" button
+                    button.setPreferredSize(new Dimension(50, 50)); // Set size for "0" button
+                } else if (row == 4 || col == 3) {
+                    button.setPreferredSize(new Dimension(100, 50)); // Set the same size as ""
                 } else {
-                    button.setPreferredSize(new Dimension(50, 50));
+                    button.setPreferredSize(new Dimension(100, 50)); // Default button size
                 }
 
                 c.gridx = col;
