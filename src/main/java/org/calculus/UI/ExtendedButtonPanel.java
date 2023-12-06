@@ -28,7 +28,8 @@ public class ExtendedButtonPanel extends JPanel {
 
 
         BaseSpezialButton[][] buttons = {
-            { new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField), new BaseSpezialButton("G", displayTextField), new BaseSpezialButton("(", displayTextField), new BaseSpezialButton(")", displayTextField)},
+            { 
+                /*new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField),/* */ new BaseSpezialButton("G", displayTextField), new BaseSpezialButton("(", displayTextField), new BaseSpezialButton(")", displayTextField)},
 
             
             // {new BaseSpezialButton("sin", displayTextField), new BaseSpezialButton("cos", displayTextField), new BaseSpezialButton("tan", displayTextField), new BaseSpezialButton("log", displayTextField)},

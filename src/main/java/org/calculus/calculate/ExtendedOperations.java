@@ -1,5 +1,7 @@
 package org.calculus.calculate;
 
+import java.math.BigDecimal;
+
 /**
  * The Calculator class provides a variety of arithmetic and mathematical functions,
  * including basic operations, modular arithmetic, exponentiation, root extraction,
@@ -10,12 +12,21 @@ public class ExtendedOperations {
 
     
 
-    public double modulo(Double a, Double b) {
+    public static Double modulo(Integer a, Integer b) {
         if (b == 0 || a == 0) {
-            return 0;
+            
+
+            return Double.NaN; // Return NaN if divisor is zero
+
+        } else {
+            var result = a % b;
+           
+
+            return Double.valueOf(result);
         }
-        return a % b ;
     }
+    
+
 
     public String potenzCalc(double base, double exponent) {
         return String.valueOf(Math.pow(base, exponent));

@@ -1,4 +1,6 @@
 package org.calculus.bracketsAndChainBills;
+
+import java.math.BigDecimal;
 import java.util.Stack;
 
 import org.calculus.calculate.ExtendedOperations;
@@ -8,86 +10,95 @@ public class MathExpressionEvaluator {
     private static String currentResult = "";
     private static ExtendedOperations extendedOperations = new ExtendedOperations();
 
-    public static double calculate(String expression) {
-        //Macht aus der String Expression einen Char Array und Initialisiert 2 Stacks
-        //Ein Stack ist für die Zahlen und der andere für die Operationen zuständig.
+    public static Double calculate(String expression) {
         currentExpression = expression;
-        char[] tokens = expression.toCharArray();
+        // Updated regex to split the expression into tokens
+        String[] tokens = expression.split("(?<=[-+*/()])|(?=[-+*/()])|(?<=mod)|(?=mod)");
         Stack<Double> values = new Stack<>();
-        Stack<Character> ops = new Stack<>();
-
-        //durchläuft den Character Array
+        Stack<String> ops = new Stack<>();
+    
         for (int i = 0; i < tokens.length; i++) {
-            //Wenn eine Zahl zwischen 1 und 9 gefunden wird, wird ein Stringbuilder initialisiert
-            if (tokens[i] >= '0' && tokens[i] <= '9'|| tokens[i] == '.') {
-                StringBuilder sbuf = new StringBuilder();
-                //Solange i eine Zahl abbildet wird sie diesem neu gebautem String hinzugefügt
-                while (i < tokens.length && (tokens[i] >= '0' && tokens[i] <= '9' || tokens[i] == '.')) {
-                    sbuf.append(tokens[i++]);
-                }
-                
-                //der Zahlen String wird in den Value Stack gelegt und i um ein veringert um die for schleife weiter zu durchlaufen
-                values.push(Double.parseDouble(sbuf.toString()));
-                i--;
-                //Wenn i eine öffnende klammer darstellt wird diese auf den ops stack gelegt
-            } else if (tokens[i] == '(') {
+            // Debug: Print current token
+            System.out.println("Token: " + tokens[i]);
+    
+            if (tokens[i].matches("[0-9.]+")) {
+                values.push(Double.parseDouble(tokens[i]));
+            } else if (tokens[i].equals("(")) {
                 ops.push(tokens[i]);
-                if (i > 0 && tokens[i - 1] >= '0' && tokens[i - 1] <= '9') {
-                    ops.push('*');
-                }
-                //wird eine schliessende klammer gefunden, werden alle bisherigen operationen ausgeführt bis
-                //eine öffnende klammer (indemfall der schluss der klammer) gefunden wird
-            } else if (tokens[i] == ')') {
-                while (ops.peek() != '(') {
+            } else if (tokens[i].equals(")")) {
+                while (!ops.isEmpty() && !ops.peek().equals("(")) {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-
                 }
-                ops.pop();
-                //wenn i + - * oder / darstellt, wird geschaut ob der Operator priorität hat oder nicht
-            } else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/') {
-                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
+                if (!ops.isEmpty()) {
+                    ops.pop();
+                }
+            } else if (tokens[i].matches("[+\\-*/]") || tokens[i].equals("mod")) {
+                while (!ops.isEmpty() && hasPrecedence(tokens[i], ops.peek())) {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
                 }
                 ops.push(tokens[i]);
             }
+    
+            // Debug: Print stacks after each token
+            System.out.println("Values stack: " + values);
+            System.out.println("Ops stack: " + ops);
         }
-
-        while (!ops.empty()) {
+    
+        while (!ops.isEmpty()) {
             values.push(applyOp(ops.pop(), values.pop(), values.pop()));
         }
-        double result = values.pop();
+    
+        Double result = values.pop();
         currentResult = String.valueOf(result);
         return result;
     }
-    //prüft den vorrang einer Opertaion
-    public static boolean hasPrecedence(char op1, char op2) {
-        //ist op 2 entweder eine öffnende oder schliessende klammer, hat diese keinen vorang und es wird false zurück gegeben
-        if (op2 == '(' || op2 == ')') {
+    
+    
+    
+    
+
+    // prüft den vorrang einer Opertaion
+    public static boolean hasPrecedence(String tokens, String string) {
+        // ist op 2 entweder eine öffnende oder schliessende klammer, hat diese keinen
+        // vorang und es wird false zurück gegeben
+        if (string.equals("(") || string.equals(")")) {
             return false;
         }
-        //ist die erste Operation kein * oder / oder die 2 Operation kein + oder - wird true zurück gegeben
-        return (op1 != '*' && op1 != '/') || (op2 != '+' && op2 != '-');
+        // ist die erste Operation kein * oder / oder die 2 Operation kein + oder - wird
+        // true zurück gegeben
+        return (!tokens.equals("*") && !tokens.equals("/")) || (!string.equals("+") && !string.equals("-"));
     }
-    //führt die Operationen auf basis eines Switchcases durch.
-    public static double applyOp(char op, double b, double a) {
+
+    // führt die Operationen auf basis eines Switchcases durch.
+    public static Double applyOp(String op, Double b, Double a) {
         switch (op) {
-            case '+': return a + b;
-            case '-': return a - b;
-            case '*': return a * b;
-            case '/':
-                if (b == 0 || a == 0) {
-                    return 0;
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                if (b == 0) {
+                    return Double.NaN; // Return NaN if divisor is zero
                 }
                 return a / b;
-                case '%': return extendedOperations.modulo(((Double)a), ((Double)b));
+            case "mod":
+                if (b == 0) {
+                    return Double.NaN;
+                }
+                System.out.println("a: " + a + ", b: " + b); // Debug statement
+                return ExtendedOperations.modulo(a.intValue(), b.intValue());
         }
-        return 0;
+        return 0.0;
     }
-    public static String getExpressionAndResult(){
+
+    public static String getExpressionAndResult() {
 
         return currentExpression + "=" + currentResult;
     }
-    public static String getCurrentResult(){
+
+    public static String getCurrentResult() {
         return currentResult;
     }
 

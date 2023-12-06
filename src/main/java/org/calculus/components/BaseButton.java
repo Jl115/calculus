@@ -9,6 +9,7 @@ import org.calculus.bracketsAndChainBills.MathExpressionEvaluator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.math.BigDecimal;
 
 public class BaseButton extends JButton implements ActionListener {
     private DisplayTextField displayTextField;
@@ -53,8 +54,8 @@ public class BaseButton extends JButton implements ActionListener {
             this.value = "AC";
         } else if ("+/-".equalsIgnoreCase(getText())) {
             displayTextField.clear();
-        } else if ("%".equalsIgnoreCase(getText())) {
-            this.value = "%";
+        } else if ("mod".equalsIgnoreCase(getText())) {
+            this.value = "mod";
         } else if ("*".equalsIgnoreCase(getText())) {
             this.value = "*";
         } else if ("-".equalsIgnoreCase(getText())) {
@@ -65,6 +66,10 @@ public class BaseButton extends JButton implements ActionListener {
             this.value = "=";
         } else if (".".equalsIgnoreCase(getText())) {
             this.value = ".";
+        } else if ("pi".equalsIgnoreCase(getText())) {
+            this.value = "3.14159265358979323846";
+        } else if ("e".equalsIgnoreCase(getText())) {
+            this.value = "2.7182818284590452354";
         } else {
             this.value = "0.0";
         }
@@ -100,13 +105,14 @@ public class BaseButton extends JButton implements ActionListener {
         if (this.value.equals("AC")) {
             displayTextField.clear();
         } else if (this.value.equals("=")) {
-            double result = MathExpressionEvaluator.calculate(displayTextField.getValue());
+            Double result = MathExpressionEvaluator.calculate(displayTextField.getValue());
             System.out.println(result);
             if (!callculationTextField.getValue().isEmpty()) {
                 callculationTextField.clear();
                 
             }
-            callculationTextField.setValue(Double.toString(result));
+
+            callculationTextField.setValue(result.toString());
         } else {
             displayTextField.setValue(this.value.toString());
         }

@@ -15,11 +15,11 @@ public class CalculateModulo {
      * @throws IllegalArgumentException if the divisor is 0
      */
 
-    public static String calculateModulo(int number1, int number2) {
+    public static Double calculateModulo(double number1, double number2) {
         // It is important to check that number2 is not 0 to prevent division by zero.
         if (number2 == 0 || number1 == 0) {
-            return "can't divide by 0";
+            return 0.0;
         }
-        return String.valueOf(number1 % number2);
+        return number1 % number2;
     }
 }

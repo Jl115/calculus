@@ -7,6 +7,7 @@ import org.calculus.history.History;
 
 import java.net.StandardSocketOptions;
 import java.util.ArrayList;
+import org.calculus.calculate.ExtendedOperations;
 
 
 public class Main {
@@ -31,6 +32,9 @@ public class Main {
         // for (String value : historyia) {
         //     System.out.println(value);
         // }
+
+
+        
 
         new CallculatorFrame();
     }
