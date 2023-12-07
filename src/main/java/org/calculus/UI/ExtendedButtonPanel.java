@@ -36,7 +36,7 @@ public class ExtendedButtonPanel extends JPanel {
                         new BaseSpezialButton("winkel", displayTextField) }
         };
 
-        Dimension buttonSize = new Dimension(80, 50);
+        Dimension buttonSize = new Dimension(75, 50);
 
         // Set common preferred size for all buttons
         for (int row = 0; row < buttons.length; row++) {
