@@ -1,13 +1,15 @@
 package org.calculus.geometricSolids;
 
-import java.util.Scanner;
-
 public class SphereCalculator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Input of the radius
-        System.out.println("Please enter the radius of the sphere:");
-        double radius = scanner.nextDouble();
+    /**
+     * Calculates the volume of a cone.
+     *
+     * @param r Radius of the base of the cone
+     * @param h Height of the cone
+     * @return Volume of the cone
+     */
+    public static double Volume(double r, double h) {
+        return (22 * r * r * h) / (3 * 7);
     }
 }
+
