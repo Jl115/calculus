@@ -1,5 +1,6 @@
 package org.calculus.UI;
 
+import org.calculus.components.CallculationTextField;
 import org.calculus.components.DisplayTextField;
 
 import javax.swing.*;
@@ -7,23 +8,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class CallculatorPanel extends JPanel {
-
-    // This will be references in ExtendedButtonPanel
-    private DisplayTextField displayTextField;
-    private CallculatorPanel calculationField;
+    private DisplayTextField displayTextField = new DisplayTextField();
+    private CallculationTextField callculationTextField = new CallculationTextField();
+    private ExtendedButtonPanel extendedButtonPanel ;
 
     public CallculatorPanel() {
-        displayTextField = new DisplayTextField();
+        extendedButtonPanel = new ExtendedButtonPanel(displayTextField);
         this.setBackground(new Color(0x13161B));
 
         this.setBorder(BorderFactory.createEmptyBorder(7, 7, 7, 7));
-
+        
         // setting the layout of the panel
         this.setLayout(new BorderLayout());
 
-        // Create a panel for the additional button and the display with a vertical BoxLayout
+        // Create a panel for the additional button and the display with a vertical
+        // BoxLayout
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBackground(new Color(19, 22, 27));
@@ -96,7 +96,7 @@ public class CallculatorPanel extends JPanel {
         historyButton.setBorderPainted(false);
         historyButton.setContentAreaFilled(false);
 
-        centeringPanel.add(historyButton);
+        //centeringPanel.add(historyButton);
 
         // Add more horizontal glue to keep the button centered
         centeringPanel.add(Box.createHorizontalGlue());
@@ -111,23 +111,14 @@ public class CallculatorPanel extends JPanel {
         displayPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         displayTextField.setPreferredSize(new Dimension(400, 90));
         displayTextField.setEditable(false);
-        Font font = new Font("Arial", Font.BOLD, 38);
-        displayTextField.setForeground((new Color(41, 38, 38)));
-        displayTextField.setFont(font);
         displayPanel.add(displayTextField);
 
         // Add some vertical spacing between DisplayTextField and CalculationField
         displayPanel.add(Box.createVerticalStrut(4));
 
         // Create a textfield for the calculation
-        JTextField calculationField = new JTextField("Calculation");
-        calculationField.setHorizontalAlignment(JTextField.RIGHT);
-        calculationField.setPreferredSize(new Dimension(400, 50));
-        calculationField.setEditable(false);
-        font = new Font("Arial", Font.PLAIN, 18);
-        calculationField.setForeground((new Color(41, 38, 38)));
-        calculationField.setFont(font);
-        displayPanel.add(calculationField);
+        callculationTextField.setPreferredSize(new Dimension(400, 50));
+        displayPanel.add(callculationTextField);
 
         // Create a panel for the Delete button
         JPanel deleteButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -166,7 +157,7 @@ public class CallculatorPanel extends JPanel {
             String currentText = displayTextField.getText();
             if (!currentText.isEmpty()) {
                 String updatedText = currentText.substring(0, currentText.length() - 1);
-                displayTextField.setText(updatedText);
+                displayTextField.setUpdatedValue(updatedText);
             }
         });
 
@@ -203,7 +194,8 @@ public class CallculatorPanel extends JPanel {
         // Adding the display panel to the top panel
         topPanel.add(displayPanel);
 
-        // Adding some vertical spacing between the Delete button and the BaseButtonPanel
+        // Adding some vertical spacing between the Delete button and the
+        // BaseButtonPanel
         displayPanel.add(Box.createVerticalStrut(5));
 
         // Adding the top panel to the main panel
@@ -213,7 +205,11 @@ public class CallculatorPanel extends JPanel {
         this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
 
         // adding the BaseButtonPanel to the panel
-        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField, calculationField);
-        this.add(BaseButtonPanel, BorderLayout.EAST);
+        BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField, callculationTextField);
+        this.add(BaseButtonPanel, BorderLayout.LINE_END);
+
+        this.add(extendedButtonPanel, BorderLayout.LINE_START);
+
     }
+
 }
