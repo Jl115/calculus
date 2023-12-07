@@ -14,7 +14,7 @@ public class CallculatorPanel extends JPanel {
     private ExtendedButtonPanel extendedButtonPanel ;
 
     public CallculatorPanel() {
-        extendedButtonPanel = new ExtendedButtonPanel(displayTextField);
+        extendedButtonPanel = new ExtendedButtonPanel(displayTextField, callculationTextField);
         this.setBackground(new Color(0x13161B));
 
         this.setBorder(BorderFactory.createEmptyBorder(7, 7, 7, 7));
@@ -202,7 +202,7 @@ displayPanel.add(callculationTextField);
         this.add(topPanel, BorderLayout.PAGE_START);
 
         // adding extended buttons to the panel
-        this.add(new ExtendedButtonPanel(displayTextField), BorderLayout.LINE_START);
+        this.add(new ExtendedButtonPanel(displayTextField, callculationTextField), BorderLayout.LINE_START);
 
         // adding the BaseButtonPanel to the panel
         BaseButtonPanel BaseButtonPanel = new BaseButtonPanel(displayTextField, callculationTextField);

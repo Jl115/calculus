@@ -71,7 +71,7 @@ public class BaseButton extends JButton implements ActionListener {
         } else if ("e".equalsIgnoreCase(getText())) {
             this.value = "2.7182818284590452354";
         } else {
-            this.value = "0.0";
+
         }
         return value;
 

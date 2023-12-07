@@ -6,15 +6,17 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JPanel;
 import org.calculus.components.BaseSpezialButton;
+import org.calculus.components.CallculationTextField;
 import org.calculus.components.DisplayTextField;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class ExtendedButtonPanel extends JPanel {
+    CallculationTextField callculationTextField;
     
 
-    public ExtendedButtonPanel(DisplayTextField displayTextField) {
+    public ExtendedButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField ) {
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
         setPreferredSize(new Dimension(300, 100));
@@ -28,11 +30,10 @@ public class ExtendedButtonPanel extends JPanel {
 
 
         BaseSpezialButton[][] buttons = {
-            { 
-                /*new BaseSpezialButton("pi", displayTextField), new BaseSpezialButton("e", displayTextField),/* */ new BaseSpezialButton("G", displayTextField), new BaseSpezialButton("(", displayTextField), new BaseSpezialButton(")", displayTextField)},
+            { new BaseSpezialButton("pi", displayTextField, callculationTextField ), new BaseSpezialButton("e", displayTextField, callculationTextField ),  new BaseSpezialButton("G", displayTextField, callculationTextField ), new BaseSpezialButton("(", displayTextField, callculationTextField ), new BaseSpezialButton(")", displayTextField, callculationTextField )},
 
             
-            // {new BaseSpezialButton("sin", displayTextField), new BaseSpezialButton("cos", displayTextField), new BaseSpezialButton("tan", displayTextField), new BaseSpezialButton("log", displayTextField)},
+            {new BaseSpezialButton("sin", displayTextField, callculationTextField ), new BaseSpezialButton("cos", displayTextField, callculationTextField ), new BaseSpezialButton("tan", displayTextField, callculationTextField ), new BaseSpezialButton("log", displayTextField, callculationTextField ), new BaseSpezialButton  ("√", displayTextField, callculationTextField )},
             
         };
 

@@ -1,6 +1,9 @@
 package org.calculus.components;
 
 import javax.swing.*;
+
+import org.calculus.calculate.ExtendedOperations;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,13 +12,17 @@ import java.awt.geom.RoundRectangle2D;
 public class BaseSpezialButton extends JButton implements ActionListener {
     private String specialValue = "";
     private DisplayTextField displayTextField;
+    private CallculationTextField callculationTextField;
     private final String eulisch = "2.7182818284590452354";
     private final String pi = "3.14159265358979323846";
     private final String G = "6.6743";
+    ExtendedOperations extendedOperations = new ExtendedOperations();
 
-    public BaseSpezialButton(String name, DisplayTextField displayTextField) {
+    public BaseSpezialButton(String name, DisplayTextField displayTextField,
+            CallculationTextField callculationTextField) {
         super(name);
         this.displayTextField = displayTextField;
+        this.callculationTextField = callculationTextField;
         addActionListener(this);
         setButtonProperties();
 
@@ -32,22 +39,47 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         setBackground(new java.awt.Color(41, 46, 55));
     }
 
-
-
     public void setSpecialValue(String specialValue) {
         if ("pi".equalsIgnoreCase(getText())) {
             this.specialValue = pi;
         } else if ("e".equalsIgnoreCase(getText())) {
             this.specialValue = eulisch;
         } else if ("G".equalsIgnoreCase(getText())) {
-            this.specialValue = G ;
+            this.specialValue = G;
         } else if ("(".equalsIgnoreCase(getText())) {
             this.specialValue = "(";
         } else if (")".equalsIgnoreCase(getText())) {
             this.specialValue = ")";
-        } 
-        else {
-            
+        } else if ("√".equalsIgnoreCase(getText())) {
+            try {
+                double value = Double.valueOf(displayTextField.getText());
+                String result = extendedOperations.squareRoot(value);
+                System.out.println("Berechnete Wurzel von " + value + " ist " + result);
+                this.specialValue = result;
+            } catch (NumberFormatException ex) {
+                System.out.println("Fehler bei der Konvertierung: " + ex.getMessage());
+                this.specialValue = "Ungültige Eingabe";
+            }
+        } else if ("sin".equalsIgnoreCase(getText())) {
+            this.specialValue = "sin";
+        } else if ("cos".equalsIgnoreCase(getText())) {
+            this.specialValue = "cos";
+        } else if ("tan".equalsIgnoreCase(getText())) {
+            this.specialValue = "tan";
+        } else if ("log".equalsIgnoreCase(getText())) {
+            this.specialValue = "log";
+        } else if ("ln".equalsIgnoreCase(getText())) {
+            this.specialValue = "ln";
+        } else if ("^".equalsIgnoreCase(getText())) {
+            this.specialValue = "^";
+        } else if ("!".equalsIgnoreCase(getText())) {
+            this.specialValue = "!";
+        } else if ("x".equalsIgnoreCase(getText())) {
+            this.specialValue = "x";
+        } else if ("y".equalsIgnoreCase(getText())) {
+            this.specialValue = "y";
+        } else {
+
         }
     }
 
@@ -79,7 +111,20 @@ public class BaseSpezialButton extends JButton implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        displayTextField.setValue(this.specialValue.toString());
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == this && "√".equalsIgnoreCase(getText())) {
+        try {
+            double value = Double.valueOf(displayTextField.getText());
+            String result = extendedOperations.squareRoot(value);
+            // Leeren des callculationTextField vor dem Setzen des neuen Wertes
+            this.callculationTextField.setText("");
+            this.callculationTextField.setText(result);
+        } catch (NumberFormatException ex) {
+            displayTextField.setText("Ungültige Eingabe");
+            // Optional: Leeren des callculationTextField, wenn ein Fehler auftritt
+            this.callculationTextField.setText("");
+        }
     }
+}
+
 }

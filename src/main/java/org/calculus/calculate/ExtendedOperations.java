@@ -1,6 +1,6 @@
 package org.calculus.calculate;
 
-import java.math.BigDecimal;
+
 
 /**
  * The Calculator class provides a variety of arithmetic and mathematical functions,
@@ -28,22 +28,22 @@ public class ExtendedOperations {
     
 
 
-    public String potenzCalc(double base, double exponent) {
-        return String.valueOf(Math.pow(base, exponent));
+    public Double potenzCalc(double base, double exponent) {
+        return Math.pow(base, exponent);
     }
 
     public String squareRoot(double number) {
         if (number < 0) {
-            return "Not a Number";
+            return String.valueOf(Double.NaN);
         }
         return String.valueOf(Math.sqrt(number));
     }
 
-    public String factorial(double n) {
+    public Double factorial(double n) {
         double result = 1.0;
         for (double i = 2; i <= n; i++) {
             result *= i;
         }
-        return String.valueOf(result);
+        return result;
     }
 }
