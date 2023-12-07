@@ -1,15 +1,17 @@
 package org.calculus.geometricSolids;
 
+import java.util.Scanner;
+
 public class ConeCalculator {
     /**
-     * Calculates the volume of a cone.
+     * Fordert den Benutzer zur Eingabe des Radius der Grundfläche des Kegels auf.
      *
-     * @param r Radius of the base of the cone
-     * @param h Height of the cone
-     * @return Volume of the cone
+     * @return Radius des Kegels
      */
-    public static double Volume(double r, double h) {
-        return (22 * r * r * h) / (3 * 7);
+    public static double requestConeRadius() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bitte geben Sie den Radius der Grundfläche des Kegels ein:");
+        return scanner.nextDouble();
     }
 }
 
