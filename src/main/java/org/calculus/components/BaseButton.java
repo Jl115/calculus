@@ -9,6 +9,8 @@ import org.calculus.bracketsAndChainBills.MathExpressionEvaluator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 public class BaseButton extends JButton implements ActionListener {
@@ -79,25 +81,33 @@ public class BaseButton extends JButton implements ActionListener {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g.create();
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        try {
+            File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+            Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.PLAIN, 18);
 
-        g2.setColor(getBackground());
-        g2.fill(new RoundRectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1, 15, 15));
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        g2.setColor(getForeground());
-        g2.setFont(new Font("Arial", Font.PLAIN, 16));
-        FontMetrics metrics = g2.getFontMetrics();
-        int x = (getWidth() - metrics.stringWidth(getText())) / 2;
-        int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
-        g2.drawString(getText(), x, y);
+            g2.setColor(getBackground());
+            g2.fill(new RoundRectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1, 15, 15));
 
-        g2.dispose();
+            g2.setColor(getForeground());
+            g2.setFont(customFont); // Set the custom font
+            FontMetrics metrics = g2.getFontMetrics();
+            int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+            int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+            g2.drawString(getText(), x, y);
+
+            g2.dispose();
+        } catch (IOException | FontFormatException e) {
+            e.printStackTrace();
+            // Handle font loading error
+            super.paintComponent(g); // If there's an error, fallback to default paintComponent
+        }
     }
 
     @Override
     protected void paintBorder(Graphics g) {
-        // Do not paint a border
     }
 
     @Override
@@ -112,6 +122,7 @@ public class BaseButton extends JButton implements ActionListener {
                 callculationTextField.clear();
                 
             }
+
             callculationTextField.setValue(result.toString());
         } else {
             displayTextField.setValue(this.value.toString());
