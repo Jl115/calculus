@@ -78,7 +78,6 @@ public class HistoryPanel extends JPanel {
                     g2.drawString(getText(), x, y);
                 } catch (IOException | FontFormatException e) {
                     e.printStackTrace();
-                    // Handle font loading error
                     g2.setColor(getForeground());
                     super.paintComponent(g);
                 }
@@ -88,7 +87,6 @@ public class HistoryPanel extends JPanel {
 
             @Override
             protected void paintBorder(Graphics g) {
-                // Do not paint a border
             }
         };
         closeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
