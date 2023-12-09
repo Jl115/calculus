@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="adding new rules and fixing the bugs" />
+    <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="ConeCalculator.java classe bearbeitet">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "geometric-solids",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;geometric-solids&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.calculus.Main" />
@@ -87,7 +90,8 @@
       <updated>1700420505341</updated>
       <workItem from="1700420506385" duration="190000" />
       <workItem from="1701883742087" duration="606000" />
-      <workItem from="1701964185978" duration="321000" />
+      <workItem from="1701964185978" duration="1204000" />
+      <workItem from="1701965405695" duration="5819000" />
     </task>
     <task id="LOCAL-00001" summary="adding new rules and fixing the bugs">
       <option name="closed" value="true" />
@@ -97,7 +101,47 @@
       <option name="project" value="LOCAL" />
       <updated>1701964418264</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adding new rules and fixing the bugs">
+      <option name="closed" value="true" />
+      <created>1701964814145</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701964814145</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding new rules and fixing the bugs">
+      <option name="closed" value="true" />
+      <created>1701964855712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701964855713</updated>
+    </task>
+    <task id="LOCAL-00004" summary="shpereCalculator.java classe erstellt und bearbeitet">
+      <option name="closed" value="true" />
+      <created>1701965495217</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701965495217</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ConeCalculator.java classe erstellt und bearbeitet">
+      <option name="closed" value="true" />
+      <created>1701965535928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701965535928</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ConeCalculator.java classe bearbeitet">
+      <option name="closed" value="true" />
+      <created>1701973456659</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701973456659</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +160,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding new rules and fixing the bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding new rules and fixing the bugs" />
+    <MESSAGE value="shpereCalculator.java classe erstellt und bearbeitet" />
+    <MESSAGE value="ConeCalculator.java classe erstellt und bearbeitet" />
+    <MESSAGE value="ConeCalculator.java classe bearbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="ConeCalculator.java classe bearbeitet" />
   </component>
 </project>
