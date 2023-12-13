@@ -1,0 +1,280 @@
+Index: src/main/java/org/calculus/geometricSolids/SphereCalculator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.calculus.geometricSolids;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class SphereCalculator {\r\n\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        System.out.print(\"Geben Sie den Radius der Kugel ein: \");\r\n        double radius = scanner.nextDouble();\r\n\r\n        double volume = calculateVolume(radius);\r\n        double surfaceArea = calculateSurfaceArea(radius);\r\n\r\n        System.out.println(\"Das Volumen der Kugel ist: \" + volume);\r\n        System.out.println(\"Die Oberfläche der Kugel ist: \" + surfaceArea);\r\n    }\r\n\r\n    public static double calculateVolume(double radius) {\r\n        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);\r\n    }\r\n\r\n    public static double calculateSurfaceArea(double radius) {\r\n        return 4 * Math.PI * radius * radius;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/calculus/geometricSolids/SphereCalculator.java b/src/main/java/org/calculus/geometricSolids/SphereCalculator.java
+--- a/src/main/java/org/calculus/geometricSolids/SphereCalculator.java	
++++ b/src/main/java/org/calculus/geometricSolids/SphereCalculator.java	
+@@ -17,11 +17,36 @@
+         System.out.println("Die Oberfläche der Kugel ist: " + surfaceArea);
+     }
+ 
++
++    /**
++     * Fordert den Benutzer zur Eingabe des Radius der Kugel auf.
++     *
++     * @return Radius der Kugel
++     */
++
++    public static double requestRadius() {
++        Scanner scanner = new Scanner(System.in);
++        System.out.println("Bitte geben Sie den Radius der Kugel ein:");
++        return scanner.nextDouble();
++    }
++
++    /**
++     * Berechnet das Volumen einer Kugel.
++     *
++     * @param radius Radius der Kugel
++     * @return Volumen der Kugel
++     */
++
++
+     public static double calculateVolume(double radius) {
+         return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+     }
+ 
++
+     public static double calculateSurfaceArea(double radius) {
+         return 4 * Math.PI * radius * radius;
+     }
++
+ }
++
++
+Index: src/main/java/org/calculus/geometricSolids/ConeCalculator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.calculus.geometricSolids;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class ConeCalculator {\r\n\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        System.out.print(\"Geben Sie den Radius der Grundfläche des Kegels ein: \");\r\n        double radius = scanner.nextDouble();\r\n\r\n        System.out.print(\"Geben Sie die Höhe des Kegels ein: \");\r\n        double height = scanner.nextDouble();\r\n\r\n        double volume = calculateVolume(radius, height);\r\n        double surfaceArea = calculateSurfaceArea(radius, height);\r\n\r\n        System.out.println(\"Das Volumen des Kegels ist: \" + volume);\r\n        System.out.println(\"Die Oberfläche des Kegels ist: \" + surfaceArea);\r\n    }\r\n\r\n    public static double calculateVolume(double radius, double height) {\r\n        return (Math.PI * radius * radius * height) / 3.0;\r\n    }\r\n    \r\n    public static double calculateSurfaceArea(double radius, double height) {\r\n        double slantHeight = Math.sqrt(radius * radius + height * height); // Länge der Mantellinie\r\n        return Math.PI * radius * (radius + slantHeight);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/calculus/geometricSolids/ConeCalculator.java b/src/main/java/org/calculus/geometricSolids/ConeCalculator.java
+--- a/src/main/java/org/calculus/geometricSolids/ConeCalculator.java	
++++ b/src/main/java/org/calculus/geometricSolids/ConeCalculator.java	
+@@ -29,3 +29,28 @@
+         return Math.PI * radius * (radius + slantHeight);
+     }
+ }
++    /**
++     * Fordert den Benutzer zur y Eingabe des Radius der Grundfläche des Kegels auf.
++     *
++     * @return Radius des Kegels
++     */
++
++    public static double requestConeRadius() {
++        Scanner scanner = new Scanner(System.in);
++        System.out.println("Bitte geben Sie den Radius der Grundfläche des Kegels ein:");
++        return scanner.nextDouble();
++    }
++
++    /**
++     * Fordert den Benutzer zur Eingabe der Höhe des Kegels auf.
++     *
++     * @return Höhe des Kegels
++     */
++
++    public static double requestConeHeight() {
++        Scanner scanner = new Scanner(System.in);
++        System.out.println("Bitte geben Sie die Höhe des Kegels ein:");
++        return scanner.nextDouble();
++    }
++}
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"75f9f022-78a9-43b4-8ad4-edd784ec24d8\" name=\"Changes\" comment=\"Ich habe die Methode zur berechnung vom Sphere angepasst.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_07__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_07__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_26__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_26__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/calculus/bracketsAndChainBills/MathExpressionEvaluator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/calculus/bracketsAndChainBills/MathExpressionEvaluator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/ConeCalculator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/ConeCalculator.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Stefan-Mitric&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"68c39595-2965-4191-8d65-f972d2315361\" />\r\n        <option name=\"url\" value=\"https://github.com/Jl115/calculus.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"KubernetesApiProvider\">{\r\n  &quot;isMigrated&quot;: true\r\n}</component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YPHt2st4kI3HPzweGOB3IAscn2\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;geometric-solids&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.calculus.Main\" />\r\n      <module name=\"calculus\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.calculus.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"75f9f022-78a9-43b4-8ad4-edd784ec24d8\" name=\"Changes\" comment=\"adding new rules and fixing the bugs\" />\r\n      <created>1700420505341</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1700420505341</updated>\r\n      <workItem from=\"1700420506385\" duration=\"190000\" />\r\n      <workItem from=\"1701370738152\" duration=\"1827000\" />\r\n      <workItem from=\"1701788390766\" duration=\"1253000\" />\r\n      <workItem from=\"1701880329954\" duration=\"2484000\" />\r\n      <workItem from=\"1701963749230\" duration=\"4954000\" />\r\n      <workItem from=\"1702386543676\" duration=\"3927000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Habe die Klassen für die verschiedenen geometrischen Formen eingefügt.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701371241075</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701371241075</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Ich habe die Methode zur berechnung von Pyramiden erstellt.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701882807905</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701882807905</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Ich habe die Methode zur berechnung von Zylinder erstellt.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701882830714</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701882830714</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Ich habe die Methode zur berechnung vom Sphere angepasst.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1702397508531</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1702397508531</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"geometric-solids\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"adding new rules and fixing the bugs\" />\r\n    <MESSAGE value=\"Habe die Klassen für die verschiedenen geometrischen Formen eingefügt.\" />\r\n    <MESSAGE value=\"Hat sich nichts verändert.\" />\r\n    <MESSAGE value=\"Ich habe die Methode zur berechnung von Pyramiden erstellt.\" />\r\n    <MESSAGE value=\"Ich habe die Methode zur berechnung von Zylinder erstellt.\" />\r\n    <MESSAGE value=\"Ich habe die Methode zur berechnung vom Sphere angepasst.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Ich habe die Methode zur berechnung vom Sphere angepasst.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,6 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
++<<<<<<< HEAD
+     <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="Ich habe die Methode zur berechnung vom Sphere angepasst.">
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023__14_07__Changes_.xml" afterDir="false" />
+@@ -11,6 +12,11 @@
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/bracketsAndChainBills/MathExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/bracketsAndChainBills/MathExpressionEvaluator.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/ConeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/ConeCalculator.java" afterDir="false" />
++=======
++    <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="ConeCalculator.java classe bearbeitet">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" afterDir="false" />
++>>>>>>> 76ca464d3995caea13935a8c0974e2368086db61
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -32,6 +38,7 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++<<<<<<< HEAD
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+     &quot;state&quot;: &quot;OPEN&quot;,
+@@ -46,6 +53,8 @@
+       </UrlAndAccount>
+     </option>
+   </component>
++=======
++>>>>>>> 76ca464d3995caea13935a8c0974e2368086db61
+   <component name="KubernetesApiProvider">{
+   &quot;isMigrated&quot;: true
+ }</component>
+@@ -67,6 +76,10 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;geometric-solids&quot;,
++<<<<<<< HEAD
++=======
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++>>>>>>> 76ca464d3995caea13935a8c0974e2368086db61
+     &quot;last_opened_file_path&quot;: &quot;/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+@@ -98,6 +111,13 @@
+         <item itemvalue="Application.Main" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="jdk-20.0.2-azul-20.0.2-3183f394aec4-4edb7f01" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -108,6 +128,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1700420505341</updated>
+       <workItem from="1700420506385" duration="190000" />
++<<<<<<< HEAD
+       <workItem from="1701370738152" duration="1827000" />
+       <workItem from="1701788390766" duration="1253000" />
+       <workItem from="1701880329954" duration="2484000" />
+@@ -147,6 +168,61 @@
+       <updated>1702397508531</updated>
+     </task>
+     <option name="localTasksCounter" value="5" />
++=======
++      <workItem from="1701883742087" duration="606000" />
++      <workItem from="1701964185978" duration="1204000" />
++      <workItem from="1701965405695" duration="5819000" />
++    </task>
++    <task id="LOCAL-00001" summary="adding new rules and fixing the bugs">
++      <option name="closed" value="true" />
++      <created>1701964418264</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1701964418264</updated>
++    </task>
++    <task id="LOCAL-00002" summary="adding new rules and fixing the bugs">
++      <option name="closed" value="true" />
++      <created>1701964814145</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1701964814145</updated>
++    </task>
++    <task id="LOCAL-00003" summary="adding new rules and fixing the bugs">
++      <option name="closed" value="true" />
++      <created>1701964855712</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1701964855713</updated>
++    </task>
++    <task id="LOCAL-00004" summary="shpereCalculator.java classe erstellt und bearbeitet">
++      <option name="closed" value="true" />
++      <created>1701965495217</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1701965495217</updated>
++    </task>
++    <task id="LOCAL-00005" summary="ConeCalculator.java classe erstellt und bearbeitet">
++      <option name="closed" value="true" />
++      <created>1701965535928</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1701965535928</updated>
++    </task>
++    <task id="LOCAL-00006" summary="ConeCalculator.java classe bearbeitet">
++      <option name="closed" value="true" />
++      <created>1701973456659</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1701973456659</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
++>>>>>>> 76ca464d3995caea13935a8c0974e2368086db61
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -177,11 +253,18 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="adding new rules and fixing the bugs" />
++<<<<<<< HEAD
+     <MESSAGE value="Habe die Klassen für die verschiedenen geometrischen Formen eingefügt." />
+     <MESSAGE value="Hat sich nichts verändert." />
+     <MESSAGE value="Ich habe die Methode zur berechnung von Pyramiden erstellt." />
+     <MESSAGE value="Ich habe die Methode zur berechnung von Zylinder erstellt." />
+     <MESSAGE value="Ich habe die Methode zur berechnung vom Sphere angepasst." />
+     <option name="LAST_COMMIT_MESSAGE" value="Ich habe die Methode zur berechnung vom Sphere angepasst." />
++=======
++    <MESSAGE value="shpereCalculator.java classe erstellt und bearbeitet" />
++    <MESSAGE value="ConeCalculator.java classe erstellt und bearbeitet" />
++    <MESSAGE value="ConeCalculator.java classe bearbeitet" />
++    <option name="LAST_COMMIT_MESSAGE" value="ConeCalculator.java classe bearbeitet" />
++>>>>>>> 76ca464d3995caea13935a8c0974e2368086db61
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"20\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,5 +1,4 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
++<xml version="1.0" encoding="UTF-8">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+@@ -7,8 +6,9 @@
+         <option value="$PROJECT_DIR$/pom.xml" />
+       </list>
+     </option>
++    <option name="workspaceImportForciblyTurnedOn" value="true" />
+   </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
++    <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="openjdk-20" project-jdk-type="JavaSDK">
++      <output url="file://$PROJECT_DIR$/out" />
++    </component>
+\ No newline at end of file
