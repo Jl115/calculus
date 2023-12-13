@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="adding new rules and fixing the bugs">
+    <list default="true" id="75f9f022-78a9-43b4-8ad4-edd784ec24d8" name="Changes" comment="Muss es committen damit ich pullen kann">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/calculus/geometricSolids/SphereCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +22,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Stefan-Mitric"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="68c39595-2965-4191-8d65-f972d2315361" />
+        <option name="url" value="https://github.com/Jl115/calculus.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YPHt2st4kI3HPzweGOB3IAscn2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,8 +53,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-merge-branch",
+    "git-widget-placeholder": "geometric-solids",
     "last_opened_file_path": "/Users/joeldev/Projects/1_Schule/Semester3/modul-426/calculus",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,6 +90,15 @@
       <updated>1700420505341</updated>
       <workItem from="1700420506385" duration="190000" />
     </task>
+    <task id="LOCAL-00001" summary="Muss es committen damit ich pullen kann">
+      <option name="closed" value="true" />
+      <created>1702485799537</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702485799538</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding new rules and fixing the bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding new rules and fixing the bugs" />
+    <MESSAGE value="Muss es committen damit ich pullen kann" />
+    <option name="LAST_COMMIT_MESSAGE" value="Muss es committen damit ich pullen kann" />
   </component>
 </project>
