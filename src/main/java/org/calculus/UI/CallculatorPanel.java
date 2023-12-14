@@ -96,7 +96,7 @@ public class CallculatorPanel extends JPanel {
         historyButton.setBorderPainted(false);
         historyButton.setContentAreaFilled(false);
 
-        //centeringPanel.add(historyButton);
+        centeringPanel.add(historyButton);
 
         // Add more horizontal glue to keep the button centered
         centeringPanel.add(Box.createHorizontalGlue());
