@@ -50,16 +50,17 @@ public class BaseSpezialButton extends JButton implements ActionListener {
             this.specialValue = "(";
         } else if (")".equalsIgnoreCase(getText())) {
             this.specialValue = ")";
-        } else if ("√".equalsIgnoreCase(getText())) {
-            try {
-                double value = Double.valueOf(displayTextField.getText());
-                String result = extendedOperations.squareRoot(value);
-                System.out.println("Berechnete Wurzel von " + value + " ist " + result);
-                this.specialValue = result;
-            } catch (NumberFormatException ex) {
-                System.out.println("Fehler bei der Konvertierung: " + ex.getMessage());
-                this.specialValue = "Ungültige Eingabe";
-            }
+
+            // } else if ("√".equalsIgnoreCase(getText())) {
+            // try {
+            // double value = Double.valueOf(displayTextField.getText());
+            // String result = extendedOperations.squareRoot(value);
+            // System.out.println("Berechnete Wurzel von " + value + " ist " + result);
+            // this.specialValue = result;
+            // } catch (NumberFormatException ex) {
+            // System.out.println("Fehler bei der Konvertierung: " + ex.getMessage());
+            // this.specialValue = "Ungültige Eingabe";
+            // }
         } else if ("sin".equalsIgnoreCase(getText())) {
             this.specialValue = "sin";
         } else if ("cos".equalsIgnoreCase(getText())) {
@@ -70,9 +71,9 @@ public class BaseSpezialButton extends JButton implements ActionListener {
             this.specialValue = "log";
         } else if ("ln".equalsIgnoreCase(getText())) {
             this.specialValue = "ln";
-        } else if ("^".equalsIgnoreCase(getText())) {
+        } else if ("x^".equalsIgnoreCase(getText())) {
             this.specialValue = "^";
-        } else if ("!".equalsIgnoreCase(getText())) {
+        } else if ("x!".equalsIgnoreCase(getText())) {
             this.specialValue = "!";
         } else if ("x".equalsIgnoreCase(getText())) {
             this.specialValue = "x";
@@ -111,20 +112,22 @@ public class BaseSpezialButton extends JButton implements ActionListener {
     }
 
     @Override
-public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == this && "√".equalsIgnoreCase(getText())) {
-        try {
-            double value = Double.valueOf(displayTextField.getText());
-            String result = extendedOperations.squareRoot(value);
-            // Leeren des callculationTextField vor dem Setzen des neuen Wertes
-            this.callculationTextField.setText("");
-            this.callculationTextField.setText(result);
-        } catch (NumberFormatException ex) {
-            displayTextField.setText("Ungültige Eingabe");
-            // Optional: Leeren des callculationTextField, wenn ein Fehler auftritt
-            this.callculationTextField.setText("");
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this && "√".equalsIgnoreCase(getText())) {
+            try {
+                double value = Double.valueOf(displayTextField.getText());
+                String result = extendedOperations.squareRoot(value);
+                // Leeren des callculationTextField vor dem Setzen des neuen Wertes
+                this.callculationTextField.setText("");
+                this.callculationTextField.setText(result);
+            } catch (NumberFormatException ex) {
+                displayTextField.setText("Ungültige Eingabe");
+                // Optional: Leeren des callculationTextField, wenn ein Fehler auftritt
+                this.callculationTextField.setText("");
+            }
+        } else {
+            this.displayTextField.setValue(specialValue.toString());
         }
-    }
-}
 
+    }
 }

@@ -11,11 +11,11 @@ public class MathExpressionEvaluator {
 
     public static Double calculate(String expression) {
         currentExpression = expression;
-        
-        String[] tokens = expression.split("(?<=[-+*/()])|(?=[-+*/()])|(?<=mod)|(?=mod)");
+
+        String[] tokens = expression.split("(?<=[-+*/()^!])|(?=[-+*/()^!])|(?<=mod)|(?=mod)");
         Stack<Double> values = new Stack<>();
         Stack<String> ops = new Stack<>();
-    
+
         for (int i = 0; i < tokens.length; i++) {
             if (tokens[i].matches("[0-9.]+")) {
                 values.push(Double.parseDouble(tokens[i]));
@@ -28,22 +28,29 @@ public class MathExpressionEvaluator {
                 if (!ops.isEmpty()) {
                     ops.pop();
                 }
-            } else if (tokens[i].matches("[+\\-*/]") || tokens[i].equals("mod")) {
+            }  else if (tokens[i].equals("!")) {
+                    if (!values.isEmpty()) {
+                        values.push(extendedOperations.factorial(values.pop()));
+                    }
+                
+            
+            } else if (tokens[i].matches("[+\\-*/]") || tokens[i].equals("mod")  || tokens[i].equals("^") || tokens[i].equals("!")) {
                 while (!ops.isEmpty() && hasPrecedence(tokens[i], ops.peek())) {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
                 }
                 ops.push(tokens[i]);
             }
         }
-    
+
         while (!ops.isEmpty()) {
             values.push(applyOp(ops.pop(), values.pop(), values.pop()));
         }
-    
+
         Double result = values.pop();
         currentResult = String.valueOf(result);
         return result;
     }
+
     // prüft den vorrang einer Opertaion
     public static boolean hasPrecedence(String tokens, String string) {
         // ist op 2 entweder eine öffnende oder schliessende klammer, hat diese keinen
@@ -68,7 +75,7 @@ public class MathExpressionEvaluator {
             case "/":
                 if (b == 0) {
                     // Return NaN if divisor is zero
-                    return Double.NaN; 
+                    return Double.NaN;
                 }
                 return a / b;
             case "mod":
@@ -76,6 +83,10 @@ public class MathExpressionEvaluator {
                     return Double.NaN;
                 }
                 return ExtendedOperations.modulo(a.intValue(), b.intValue());
+            case "^":
+                return extendedOperations.potenzCalc(a, b);
+            case "!":
+                return extendedOperations.factorial(a);
         }
         return 0.0;
     }

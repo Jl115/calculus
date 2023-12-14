@@ -30,10 +30,10 @@ public class ExtendedButtonPanel extends JPanel {
 
 
         BaseSpezialButton[][] buttons = {
-            { new BaseSpezialButton("pi", displayTextField, callculationTextField ), new BaseSpezialButton("e", displayTextField, callculationTextField ),  new BaseSpezialButton("G", displayTextField, callculationTextField ), new BaseSpezialButton("(", displayTextField, callculationTextField ), new BaseSpezialButton(")", displayTextField, callculationTextField )},
+            { new BaseSpezialButton("x^", displayTextField, callculationTextField ), new BaseSpezialButton("e", displayTextField, callculationTextField ),  new BaseSpezialButton("G", displayTextField, callculationTextField ), new BaseSpezialButton("(", displayTextField, callculationTextField ), new BaseSpezialButton(")", displayTextField, callculationTextField )},
 
             
-            {new BaseSpezialButton("sin", displayTextField, callculationTextField ), new BaseSpezialButton("cos", displayTextField, callculationTextField ), new BaseSpezialButton("tan", displayTextField, callculationTextField ), new BaseSpezialButton("log", displayTextField, callculationTextField ), new BaseSpezialButton  ("√", displayTextField, callculationTextField )},
+            {new BaseSpezialButton("x!", displayTextField, callculationTextField ), new BaseSpezialButton("cos", displayTextField, callculationTextField ), new BaseSpezialButton("tan", displayTextField, callculationTextField ), new BaseSpezialButton("log", displayTextField, callculationTextField ), new BaseSpezialButton  ("√", displayTextField, callculationTextField )},
             
         };
 

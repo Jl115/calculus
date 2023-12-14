@@ -29,6 +29,7 @@ public class ExtendedOperations {
 
 
     public Double potenzCalc(double base, double exponent) {
+        System.out.println("Basis: " + base + " Exponent: " + exponent);
         return Math.pow(base, exponent);
     }
 
