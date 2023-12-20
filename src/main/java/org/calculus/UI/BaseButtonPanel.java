@@ -10,9 +10,7 @@ import java.awt.*;
 
 public class BaseButtonPanel extends JPanel {
 
-
     public BaseButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField) {
-
 
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
@@ -88,7 +86,6 @@ public class BaseButtonPanel extends JPanel {
                 if (label.equals("AC")) {
                     button.setBackground(new java.awt.Color(80, 64, 153));
                     button.addActionListener(e -> displayTextField.setValue(""));
-                    button.addActionListener(e -> callculationTextField.setValue(""));
                 }
 
                 // Set specific size for buttons in the specified rows and columns

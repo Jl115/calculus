@@ -3,7 +3,6 @@ package org.calculus.components;
 import javax.swing.*;
 import java.awt.*;
 
-import org.calculus.UI.CallculatorPanel;
 import org.calculus.bracketsAndChainBills.MathExpressionEvaluator;
 
 import java.awt.event.ActionEvent;
@@ -101,7 +100,6 @@ public class BaseButton extends JButton implements ActionListener {
             g2.dispose();
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
-            // Handle font loading error
             super.paintComponent(g); // If there's an error, fallback to default paintComponent
         }
     }
@@ -120,9 +118,7 @@ public class BaseButton extends JButton implements ActionListener {
             System.out.println(result);
             if (!callculationTextField.getValue().isEmpty()) {
                 callculationTextField.clear();
-                
             }
-
             callculationTextField.setValue(result.toString());
         } else {
             displayTextField.setValue(this.value.toString());

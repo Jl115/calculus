@@ -7,10 +7,11 @@ import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 
 public class BaseSpezialButton extends JButton implements ActionListener {
-    private Double specialValue = 0.0;
+    private String specialValue = "";
     private DisplayTextField displayTextField;
-
-    private int fontSize = 18;
+    private final String eulisch = "2.7182818284590452354";
+    private final String pi = "3.14159265358979323846";
+    private final String G = "6.6743";
 
     public BaseSpezialButton(String name, DisplayTextField displayTextField) {
         super(name);
@@ -22,12 +23,6 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         setSpecialValue(null); // Dies wird in setSpecialValue abgefangen
     }
 
-    public void setFontSize(int fontSize) {
-        this.fontSize = fontSize;
-        setFont(new Font("Arial", Font.PLAIN, fontSize));
-        repaint();
-    }
-
     private void setButtonProperties() {
         setContentAreaFilled(false);
         setFocusPainted(false);
@@ -37,17 +32,26 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         setBackground(new java.awt.Color(41, 46, 55));
     }
 
-    public void setSpecialValue(Double specialValue) {
+
+
+    public void setSpecialValue(String specialValue) {
         if ("pi".equalsIgnoreCase(getText())) {
-            this.specialValue = Math.PI;
+            this.specialValue = pi;
         } else if ("e".equalsIgnoreCase(getText())) {
-            this.specialValue = Math.E;
-        } else {
-            this.specialValue = specialValue;
+            this.specialValue = eulisch;
+        } else if ("G".equalsIgnoreCase(getText())) {
+            this.specialValue = G ;
+        } else if ("(".equalsIgnoreCase(getText())) {
+            this.specialValue = "(";
+        } else if (")".equalsIgnoreCase(getText())) {
+            this.specialValue = ")";
+        } 
+        else {
+            
         }
     }
 
-    public Double getSpecialValue() {
+    public String getSpecialValue() {
         return specialValue;
     }
 
@@ -60,7 +64,7 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         g2.fill(new RoundRectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1, 15, 15));
 
         g2.setColor(getForeground());
-        g2.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        g2.setFont(getFont());
         FontMetrics metrics = g2.getFontMetrics();
         int x = (getWidth() - metrics.stringWidth(getText())) / 2;
         int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();

@@ -1,5 +1,6 @@
 package org.calculus.UI;
 
+import org.calculus.components.BaseButton;
 import org.calculus.components.DisplayTextField;
 import org.calculus.history.History;
 
@@ -22,8 +23,6 @@ public class HistoryPanel extends JPanel {
         setLayout(new BorderLayout());
         setBackground(new Color(19, 22, 27));
 
-        // Initialize the history and historyFields
-        history = new History();
         historyFields = new ArrayList<>();
 
         // Custom font file path
@@ -36,8 +35,8 @@ public class HistoryPanel extends JPanel {
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         // Create and add text fields
-        for (int i = 0; i < history.maxHistorySize; i++) {
-            JTextField textField = new JTextField(10);
+        for (int i = 0; i < History.getHistory().size(); i++) {
+            JTextField textField = new JTextField(History.getHistory().get(i), 10);
             textField.setEditable(false);
             textField.setHorizontalAlignment(JTextField.CENTER);
 
@@ -45,7 +44,7 @@ public class HistoryPanel extends JPanel {
             contentPanel.add(textField);
 
             // Add vertical spacing between textfields
-            if (i < history.maxHistorySize - 1) {
+            if (i < History.getHistory().size() - 1) {
                 contentPanel.add(Box.createVerticalStrut(5));
             }
         }
@@ -110,5 +109,14 @@ public class HistoryPanel extends JPanel {
         add(closeButtonPanel, BorderLayout.SOUTH);
     }
 
+    public void updateHistory(String value) {
+        // Assuming historyFields is an ArrayList of JTextFields in your HistoryPanel
+        for (JTextField textField : historyFields) {
+            if (textField.getText().isEmpty()) {
+                textField.setText(value);
+                break; // Update only the first empty field or implement your logic accordingly
+            }
+        }
+    }
 }
 

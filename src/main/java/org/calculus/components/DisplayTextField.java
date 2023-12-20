@@ -16,7 +16,6 @@ public class DisplayTextField extends JTextField {
         setValue(value);
     }
 
-
     public void setValue(String value) {
         try {
             File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
