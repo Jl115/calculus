@@ -1,17 +1,30 @@
 package org.calculus.UI;
 
+import org.calculus.components.DisplayTextField;
+import org.calculus.history.History;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HistoryPanel extends JPanel {
+
+    DisplayTextField displayTextField = new DisplayTextField();
+
+    private ArrayList<JTextField> historyFields;
+    private History history;
 
     public HistoryPanel() {
         setLayout(new BorderLayout());
         setBackground(new Color(19, 22, 27));
+
+        // Initialize the history and historyFields
+        history = new History();
+        historyFields = new ArrayList<>();
 
         // Custom font file path
         String customFontPath = ".\\SometypeMono-VariableFont_wght.ttf";
@@ -22,42 +35,24 @@ public class HistoryPanel extends JPanel {
         contentPanel.setBackground(new Color(19, 22, 27));
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Color for the text fields
-        Color textFieldColor = new Color(162, 148, 225, 96);
-
-        // Create the text fields
-        for (int i = 0; i < 10; i++) {
-            JTextField textField = new JTextField() {
-                @Override
-                protected void paintComponent(Graphics g) {
-                    Graphics2D g2 = (Graphics2D) g.create();
-                    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    g2.setColor(textFieldColor);
-                    g2.fillRect(0, 0, getWidth(), getHeight());
-                    g2.dispose();
-
-                    try {
-                        Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File(customFontPath)).deriveFont(Font.BOLD, 14);
-
-                        g2.setColor(getForeground());
-                        g2.setFont(customFont);
-                        super.paintComponent(g);
-                    } catch (IOException | FontFormatException e) {
-                        e.printStackTrace();
-                        g2.setColor(getForeground());
-                        super.paintComponent(g);
-                    }
-                }
-            };
-            textField.setPreferredSize(new Dimension(200, 30));
+        // Create and add text fields
+        for (int i = 0; i < history.maxHistorySize; i++) {
+            JTextField textField = new JTextField(10);
             textField.setEditable(false);
-            textField.setOpaque(false);
-            textField.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+            textField.setHorizontalAlignment(JTextField.CENTER);
+
+            historyFields.add(textField);
             contentPanel.add(textField);
-            contentPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+
+            // Add vertical spacing between textfields
+            if (i < history.maxHistorySize - 1) {
+                contentPanel.add(Box.createVerticalStrut(5));
+            }
         }
 
         // Create the "Close History" button
+        JPanel closeButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        closeButtonPanel.setBackground(new Color(19, 22, 27));
         JButton closeButton = new JButton("Close History") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -89,9 +84,7 @@ public class HistoryPanel extends JPanel {
             protected void paintBorder(Graphics g) {
             }
         };
-        closeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        closeButton.setMaximumSize(new Dimension(500, 40));
-        closeButton.setPreferredSize(new Dimension(500, 40));
+        closeButton.setPreferredSize(new Dimension(290, 40));
         closeButton.setBackground(new Color(80, 64, 153));
         closeButton.setForeground(Color.WHITE);
         closeButton.addActionListener(new ActionListener() {
@@ -103,10 +96,19 @@ public class HistoryPanel extends JPanel {
                 }
             }
         });
-        contentPanel.add(Box.createRigidArea(new Dimension(0, 30)));
-        contentPanel.add(closeButton);
 
-        // Add the content panel to the HistoryPanel
+        closeButtonPanel.add(closeButton);
+        closeButtonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        contentPanel.add(Box.createRigidArea(new Dimension(0, 30)));
+
+        contentPanel.add(Box.createVerticalGlue());
+        contentPanel.add(closeButtonPanel);
+
+        // Add the content panel and close button panel to the HistoryPanel
         add(contentPanel, BorderLayout.CENTER);
+        add(closeButtonPanel, BorderLayout.SOUTH);
     }
+
 }
+

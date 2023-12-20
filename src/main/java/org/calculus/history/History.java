@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class History {
     private final ArrayList<String> history = new ArrayList<>();
-    private final int maxHistorySize = 10;
+    public final int maxHistorySize = 10;
 
     public void addValue(String value) {
         history.add(value);
