@@ -1,7 +1,5 @@
 package org.calculus.UI;
 
-import org.calculus.components.BaseButton;
-import org.calculus.components.DisplayTextField;
 import org.calculus.history.History;
 
 import javax.swing.*;
@@ -14,10 +12,7 @@ import java.util.ArrayList;
 
 public class HistoryPanel extends JPanel {
 
-    DisplayTextField displayTextField = new DisplayTextField();
-
     private ArrayList<JTextField> historyFields;
-    private History history;
 
     public HistoryPanel() {
         setLayout(new BorderLayout());
@@ -36,6 +31,7 @@ public class HistoryPanel extends JPanel {
 
         // Create and add text fields
         for (int i = 0; i < History.getHistory().size(); i++) {
+            // Create a new JTextField and set its initial text to the historical value at index 'i'
             JTextField textField = new JTextField(History.getHistory().get(i), 10);
             textField.setEditable(false);
             textField.setHorizontalAlignment(JTextField.CENTER);
@@ -107,16 +103,6 @@ public class HistoryPanel extends JPanel {
         // Add the content panel and close button panel to the HistoryPanel
         add(contentPanel, BorderLayout.CENTER);
         add(closeButtonPanel, BorderLayout.SOUTH);
-    }
-
-    public void updateHistory(String value) {
-        // Assuming historyFields is an ArrayList of JTextFields in your HistoryPanel
-        for (JTextField textField : historyFields) {
-            if (textField.getText().isEmpty()) {
-                textField.setText(value);
-                break; // Update only the first empty field or implement your logic accordingly
-            }
-        }
     }
 }
 
