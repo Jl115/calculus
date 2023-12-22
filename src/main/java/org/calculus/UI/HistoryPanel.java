@@ -36,6 +36,14 @@ public class HistoryPanel extends JPanel {
             textField.setEditable(false);
             textField.setHorizontalAlignment(JTextField.CENTER);
 
+            // Apply custom font to the text field
+            try {
+                Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File(customFontPath)).deriveFont(Font.PLAIN, 18);
+                textField.setFont(customFont);
+            } catch (IOException | FontFormatException e) {
+                System.err.println("Font loading error: " + e.getMessage());
+            }
+
             historyFields.add(textField);
             contentPanel.add(textField);
 
