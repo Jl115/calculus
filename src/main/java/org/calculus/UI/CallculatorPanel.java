@@ -110,6 +110,21 @@ public class CallculatorPanel extends JPanel {
         historyButton.setBorderPainted(false);
         historyButton.setContentAreaFilled(false);
 
+        JButton commaButton = new JButton("Comma") {
+
+
+        };
+        // ActionListener for the comma button
+        commaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CommaFrame commaFrame = new CommaFrame();
+                commaFrame.setVisible(true);
+            }
+        });
+        topPanel.add(commaButton);
+
+
         centeringPanel.add(historyButton);
 
         // Add more horizontal glue to keep the button centered
