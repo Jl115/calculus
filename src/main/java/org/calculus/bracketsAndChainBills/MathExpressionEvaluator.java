@@ -5,6 +5,7 @@ import java.util.Stack;
 
 import org.calculus.calculate.ExtendedOperations;
 import org.calculus.decimalPlaces.DecimalPlaces;
+import org.calculus.history.History;
 
 public class MathExpressionEvaluator {
     private static String currentExpression = "0";
@@ -13,15 +14,12 @@ public class MathExpressionEvaluator {
 
     public static Double calculate(String expression) {
         currentExpression = expression;
-        // Updated regex to split the expression into tokens
-        String[] tokens = expression.split("(?<=[-+*/()])|(?=[-+*/()])|(?<=mod)|(?=mod)");
+
+        String[] tokens = expression.split("(?<=[-+*/()^!])|(?=[-+*/()^!])|(?<=mod)|(?=mod)");
         Stack<Double> values = new Stack<>();
         Stack<String> ops = new Stack<>();
-    
+
         for (int i = 0; i < tokens.length; i++) {
-            // Debug: Print current token
-            System.out.println("Token: " + tokens[i]);
-    
             if (tokens[i].matches("[0-9.]+")) {
                 values.push(Double.parseDouble(tokens[i]));
             } else if (tokens[i].equals("(")) {
@@ -33,16 +31,18 @@ public class MathExpressionEvaluator {
                 if (!ops.isEmpty()) {
                     ops.pop();
                 }
-            } else if (tokens[i].matches("[+\\-*/]") || tokens[i].equals("mod")) {
+            }  else if (tokens[i].equals("!")) {
+                if (!values.isEmpty()) {
+                    values.push(extendedOperations.factorial(values.pop()));
+                }
+
+
+            } else if (tokens[i].matches("[+\\-*/]") || tokens[i].equals("mod")  || tokens[i].equals("^") || tokens[i].equals("!")) {
                 while (!ops.isEmpty() && hasPrecedence(tokens[i], ops.peek())) {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
                 }
                 ops.push(tokens[i]);
             }
-    
-            // Debug: Print stacks after each token
-            System.out.println("Values stack: " + values);
-            System.out.println("Ops stack: " + ops);
         }
     
         while (!ops.isEmpty()) {
@@ -51,8 +51,10 @@ public class MathExpressionEvaluator {
     
         Double result = values.pop();
         currentResult = String.valueOf(result);
+
         String tempResult = DecimalPlaces.formatDecimalPoints(result);
         double finalResult = Double.parseDouble(tempResult);
+        History.addValue(expression + " = "+ tempResult);
         return finalResult;
     }
     
@@ -83,15 +85,19 @@ public class MathExpressionEvaluator {
                 return a * b;
             case "/":
                 if (b == 0) {
-                    return Double.NaN; // Return NaN if divisor is zero
+                    // Return NaN if divisor is zero
+                    return Double.NaN;
                 }
                 return a / b;
             case "mod":
                 if (b == 0) {
                     return Double.NaN;
                 }
-                System.out.println("a: " + a + ", b: " + b); // Debug statement
                 return ExtendedOperations.modulo(a.intValue(), b.intValue());
+            case "^":
+                return extendedOperations.potenzCalc(a, b);
+            case "!":
+                return extendedOperations.factorial(a);
         }
         return 0.0;
     }

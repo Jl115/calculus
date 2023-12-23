@@ -19,8 +19,8 @@ public class CommaPanel extends JPanel {
 
 
         // Custom font file path
-        // String customFontPath = ".\\SometypeMono-VariableFont_wght.ttf";
-        String customFontPath = "../../../../../../SometypeMono-VariableFont_wght.ttf";
+         String customFontPath = ".\\SometypeMono-VariableFont_wght.ttf";
+        //String customFontPath = "../../../../../../SometypeMono-VariableFont_wght.ttf";
 
         // Create a panel to hold the text fields and the button
         JPanel contentPanel = new JPanel();
