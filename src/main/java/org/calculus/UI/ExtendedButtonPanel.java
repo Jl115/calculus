@@ -99,9 +99,9 @@ public class ExtendedButtonPanel extends JPanel {
     private Font loadFont() {
         Font sometypeFont = null;
         try {
-            File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
+            // File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
 
-            // File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+            File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
             if (fontFile.exists()) {
                 sometypeFont = Font.createFont(Font.TRUETYPE_FONT, fontFile);
             } else {

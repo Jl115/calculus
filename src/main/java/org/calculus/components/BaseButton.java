@@ -81,9 +81,9 @@ public class BaseButton extends JButton implements ActionListener {
     @Override
     protected void paintComponent(Graphics g) {
         try {
-            //File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+            File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
 
-            File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
+            // File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
             Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.PLAIN, 18);
 
             Graphics2D g2 = (Graphics2D) g.create();

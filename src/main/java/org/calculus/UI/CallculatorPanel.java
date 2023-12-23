@@ -49,6 +49,7 @@ public class CallculatorPanel extends JPanel {
 
                 try {
                     File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+                    // File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
                     Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, 14);
 
                     g2.setColor(getForeground());
@@ -165,6 +166,7 @@ public class CallculatorPanel extends JPanel {
 
                 try {
                     File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+                    // File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
                     Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, 14);
 
                     g2.setColor(getForeground());

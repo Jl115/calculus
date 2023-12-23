@@ -19,9 +19,9 @@ public class DisplayTextField extends JTextField {
 
     public void setValue(String value) {
         try {
-            File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
+            // File fontFile = new File("../../../../../../SometypeMono-VariableFont_wght.ttf");
 
-            // File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+            File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
             Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.PLAIN, 24);
 
             if (this.value.equals("0.0")) {
