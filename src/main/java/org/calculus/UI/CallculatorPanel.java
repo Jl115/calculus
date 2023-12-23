@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class CallculatorPanel extends JPanel {
     private DisplayTextField displayTextField = new DisplayTextField();
@@ -45,12 +47,25 @@ public class CallculatorPanel extends JPanel {
                 g2.setColor(getBackground());
                 g2.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
 
-                g2.setColor(getForeground());
-                g2.setFont(new Font("Arial", Font.BOLD, 14));
-                FontMetrics metrics = g2.getFontMetrics();
-                int x = (getWidth() - metrics.stringWidth(getText())) / 2;
-                int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
-                g2.drawString(getText(), x, y);
+                try {
+                    File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+                    Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, 14);
+
+                    g2.setColor(getForeground());
+                    g2.setFont(customFont);
+                    FontMetrics metrics = g2.getFontMetrics();
+                    int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                    int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                    g2.drawString(getText(), x, y);
+                } catch (IOException | FontFormatException e) {
+                    e.printStackTrace();
+
+                    g2.setColor(getForeground());
+                    FontMetrics metrics = g2.getFontMetrics();
+                    int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                    int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                    g2.drawString(getText(), x, y);
+                }
 
                 g2.dispose();
             }
@@ -63,7 +78,6 @@ public class CallculatorPanel extends JPanel {
         historyButton.setPreferredSize(new Dimension(100, 30));
         historyButton.setBackground(new Color(63, 140, 255));
         historyButton.setForeground(Color.WHITE);
-        historyButton.setFont(new Font("Arial", Font.BOLD, 14));
 
         // ActionListener for the historyButton
         historyButton.addActionListener(new ActionListener() {
@@ -96,6 +110,21 @@ public class CallculatorPanel extends JPanel {
         historyButton.setBorderPainted(false);
         historyButton.setContentAreaFilled(false);
 
+        JButton commaButton = new JButton("Comma") {
+
+
+        };
+        // ActionListener for the comma button
+        commaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CommaFrame commaFrame = new CommaFrame();
+                commaFrame.setVisible(true);
+            }
+        });
+        topPanel.add(commaButton);
+
+
         centeringPanel.add(historyButton);
 
         // Add more horizontal glue to keep the button centered
@@ -118,7 +147,7 @@ public class CallculatorPanel extends JPanel {
 
         // Create a textfield for the calculation
         callculationTextField.setPreferredSize(new Dimension(400, 50));
-displayPanel.add(callculationTextField);
+        displayPanel.add(callculationTextField);
 
         // Create a panel for the Delete button
         JPanel deleteButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -134,12 +163,24 @@ displayPanel.add(callculationTextField);
                 g2.setColor(getBackground());
                 g2.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
 
-                g2.setColor(getForeground());
-                g2.setFont(new Font("Arial", Font.PLAIN, 14));
-                FontMetrics metrics = g2.getFontMetrics();
-                int x = (getWidth() - metrics.stringWidth(getText())) / 2;
-                int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
-                g2.drawString(getText(), x, y);
+                try {
+                    File fontFile = new File(".\\SometypeMono-VariableFont_wght.ttf");
+                    Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, 14);
+
+                    g2.setColor(getForeground());
+                    g2.setFont(customFont);
+                    FontMetrics metrics = g2.getFontMetrics();
+                    int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                    int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                    g2.drawString(getText(), x, y);
+                } catch (IOException | FontFormatException e) {
+                    e.printStackTrace();
+                    g2.setColor(getForeground());
+                    FontMetrics metrics = g2.getFontMetrics();
+                    int x = (getWidth() - metrics.stringWidth(getText())) / 2;
+                    int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+                    g2.drawString(getText(), x, y);
+                }
 
                 g2.dispose();
             }
@@ -151,7 +192,6 @@ displayPanel.add(callculationTextField);
         deleteButton.setPreferredSize(new Dimension(80, 30));
         deleteButton.setBackground(new Color(151, 78, 195));
         deleteButton.setForeground(Color.WHITE);
-        deleteButton.setFont(new Font("Arial", Font.PLAIN, 14));
 
         deleteButton.addActionListener(e -> {
             String currentText = displayTextField.getText();

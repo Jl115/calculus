@@ -1,7 +1,6 @@
 package org.calculus.calculate;
 
 
-
 /**
  * The Calculator class provides a variety of arithmetic and mathematical functions,
  * including basic operations, modular arithmetic, exponentiation, root extraction,

@@ -39,6 +39,8 @@ public class BaseSpezialButton extends JButton implements ActionListener {
         setBackground(new java.awt.Color(41, 46, 55));
     }
 
+
+
     public void setSpecialValue(String specialValue) {
         if ("pi".equalsIgnoreCase(getText())) {
             this.specialValue = pi;

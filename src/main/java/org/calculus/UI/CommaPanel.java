@@ -1,27 +1,26 @@
 package org.calculus.UI;
 
-import org.calculus.history.History;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class HistoryPanel extends JPanel {
 
-    private ArrayList<JTextField> historyFields;
+public class CommaPanel extends JPanel {
 
-    public HistoryPanel() {
+
+
+    public CommaPanel() {
         setLayout(new BorderLayout());
         setBackground(new Color(19, 22, 27));
 
-        historyFields = new ArrayList<>();
+
 
         // Custom font file path
-        String customFontPath = ".\\SometypeMono-VariableFont_wght.ttf";
+        // String customFontPath = ".\\SometypeMono-VariableFont_wght.ttf";
+        String customFontPath = "../../../../../../SometypeMono-VariableFont_wght.ttf";
 
         // Create a panel to hold the text fields and the button
         JPanel contentPanel = new JPanel();
@@ -29,34 +28,10 @@ public class HistoryPanel extends JPanel {
         contentPanel.setBackground(new Color(19, 22, 27));
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Create and add text fields
-        for (int i = 0; i < History.getHistory().size(); i++) {
-            // Create a new JTextField and set its initial text to the historical value at index 'i'
-            JTextField textField = new JTextField(History.getHistory().get(i), 10);
-            textField.setEditable(false);
-            textField.setHorizontalAlignment(JTextField.CENTER);
-
-            // Apply custom font to the text field
-            try {
-                Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File(customFontPath)).deriveFont(Font.PLAIN, 18);
-                textField.setFont(customFont);
-            } catch (IOException | FontFormatException e) {
-                System.err.println("Font loading error: " + e.getMessage());
-            }
-
-            historyFields.add(textField);
-            contentPanel.add(textField);
-
-            // Add vertical spacing between textfields
-            if (i < History.getHistory().size() - 1) {
-                contentPanel.add(Box.createVerticalStrut(5));
-            }
-        }
-
-        // Create the "Close History" button
-        JPanel closeButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        closeButtonPanel.setBackground(new Color(19, 22, 27));
-        JButton closeButton = new JButton("Close History") {
+        // Create the "OK button
+        JPanel okButton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        okButton.setBackground(new Color(19, 22, 27));
+        JButton closeComma = new JButton("OK") {
             @Override
             protected void paintComponent(Graphics g) {
                 Graphics2D g2 = (Graphics2D) g.create();
@@ -87,30 +62,30 @@ public class HistoryPanel extends JPanel {
             protected void paintBorder(Graphics g) {
             }
         };
-        closeButton.setPreferredSize(new Dimension(290, 40));
-        closeButton.setBackground(new Color(80, 64, 153));
-        closeButton.setForeground(Color.WHITE);
-        closeButton.addActionListener(new ActionListener() {
+        closeComma.setPreferredSize(new Dimension(290, 40));
+        closeComma.setBackground(new Color(80, 64, 153));
+        closeComma.setForeground(Color.WHITE);
+        closeComma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Window parentWindow = SwingUtilities.windowForComponent(HistoryPanel.this);
+                Window parentWindow = SwingUtilities.windowForComponent(CommaPanel.this);
                 if (parentWindow instanceof JFrame) {
                     ((JFrame) parentWindow).dispose();
                 }
             }
         });
 
-        closeButtonPanel.add(closeButton);
-        closeButtonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        okButton.add(closeComma);
+        okButton.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         contentPanel.add(Box.createRigidArea(new Dimension(0, 30)));
 
         contentPanel.add(Box.createVerticalGlue());
-        contentPanel.add(closeButtonPanel);
+        contentPanel.add(okButton);
 
         // Add the content panel and close button panel to the HistoryPanel
         add(contentPanel, BorderLayout.CENTER);
-        add(closeButtonPanel, BorderLayout.SOUTH);
+        add(okButton, BorderLayout.SOUTH);
     }
 }
 

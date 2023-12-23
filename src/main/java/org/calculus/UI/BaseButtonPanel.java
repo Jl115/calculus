@@ -10,9 +10,7 @@ import java.awt.*;
 
 public class BaseButtonPanel extends JPanel {
 
-
     public BaseButtonPanel(DisplayTextField displayTextField, CallculationTextField callculationTextField) {
-
 
         setLayout(new GridBagLayout());
         setBackground(new java.awt.Color(19, 22, 27));
@@ -24,11 +22,11 @@ public class BaseButtonPanel extends JPanel {
         c.weighty = 1.0;
 
         String[][] buttonLabels = {
-            {"AC", "e", "mod", "/"},
+            {"AC", "+/-", "mod", "/"},
             {"7", "8", "9", "*"},
             {"4", "5", "6", "-"},
             {"1", "2", "3", "+"},
-            { "pi","0", ".", "="}
+            { "0", ".", "="}
         };
 
         for (int row = 0; row < buttonLabels.length; row++) {
@@ -91,13 +89,17 @@ public class BaseButtonPanel extends JPanel {
                 }
 
                 // Set specific size for buttons in the specified rows and columns
-                if (row == 4 || col == 3) {
+                if (label.equals("=") || label.equals(".")) {
+                    c.gridwidth = 1;
                     button.setPreferredSize(new Dimension(100, 50));
+                } else if (label.equals("0")) {
+                    c.gridwidth = 2; // Make the "0" button span two columns
+                    button.setPreferredSize(new Dimension(150, 50));
                 } else {
-                    button.setPreferredSize(new Dimension(50, 50));
+                    button.setPreferredSize(new Dimension(100, 50));
                 }
 
-                c.gridx = col;
+                c.gridx = col + ((label.equals("=") || label.equals(".")) ? 1 : 0);
                 c.gridy = row;
                 add(button, c);
             }

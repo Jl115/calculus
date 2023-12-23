@@ -5,18 +5,20 @@ import java.util.ArrayList;
 /**
  * This class defines a History logic for the Calcs.
  */
-public class History {
-    private final ArrayList<String> history = new ArrayList<>();
-    private final int maxHistorySize = 10;
-
-    public void addValue(String value) {
+public abstract class History {
+    // Creating an ArrayList to store history values
+    private static final ArrayList<String> history = new ArrayList<>();
+    // Method to add a value to the history
+    public static void addValue(String value) {
         history.add(value);
-        if (history.size() > maxHistorySize) {
-            // Removing the 1st value if the history is bigger the 10
+        if (history.size() > 10) {
             history.remove(0);
         }
     }
-    public ArrayList<String> getHistory() {
+
+    // Method to retrieve the entire history
+    public static ArrayList<String> getHistory() {
+        // Return the ArrayList containing the stored values
         return history;
     }
 }
