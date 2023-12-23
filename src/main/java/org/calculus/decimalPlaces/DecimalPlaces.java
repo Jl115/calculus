@@ -10,6 +10,9 @@ public class DecimalPlaces {
         String format = String.format(Locale.US,"%." + decimalPlaces + "f", number);
         return format;
     }
+    public static int getDecimalPlaces(){
+        return decimalPlaces;
+    }
 
     public void setDecimalPlaces(int number) {
         decimalPlaces = number;
