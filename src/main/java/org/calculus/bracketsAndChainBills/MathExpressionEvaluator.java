@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Stack;
 
 import org.calculus.calculate.ExtendedOperations;
-import org.calculus.history.History;
+import org.calculus.decimalPlaces.DecimalPlaces;
 
 public class MathExpressionEvaluator {
     private static String currentExpression = "0";
@@ -51,9 +51,9 @@ public class MathExpressionEvaluator {
     
         Double result = values.pop();
         currentResult = String.valueOf(result);
-        // Adds the expression and its result to the history
-        History.addValue(expression + " = "+ currentResult);
-        return result;
+        String tempResult = DecimalPlaces.formatDecimalPoints(result);
+        double finalResult = Double.parseDouble(tempResult);
+        return finalResult;
     }
     
     
