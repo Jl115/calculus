@@ -1,5 +1,7 @@
 package org.calculus.UI;
 
+import org.calculus.decimalPlaces.DecimalPlaces;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +29,11 @@ public class CommaPanel extends JPanel {
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
         contentPanel.setBackground(new Color(19, 22, 27));
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        DecimalPlaces decimalPlaces = new DecimalPlaces();
+        JTextField textField = new JTextField();
+        textField.setText(DecimalPlaces.getDecimalPlaces().toString());
+        textField.setEditable(true);
+        textField.setHorizontalAlignment(JTextField.CENTER);
 
         // Create the "OK button
         JPanel okButton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -68,6 +75,7 @@ public class CommaPanel extends JPanel {
         closeComma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                DecimalPlaces.setDecimalPlaces(Integer.parseInt(textField.getText()));
                 Window parentWindow = SwingUtilities.windowForComponent(CommaPanel.this);
                 if (parentWindow instanceof JFrame) {
                     ((JFrame) parentWindow).dispose();
@@ -82,6 +90,7 @@ public class CommaPanel extends JPanel {
 
         contentPanel.add(Box.createVerticalGlue());
         contentPanel.add(okButton);
+        contentPanel.add(textField);
 
         // Add the content panel and close button panel to the HistoryPanel
         add(contentPanel, BorderLayout.CENTER);
